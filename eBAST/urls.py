@@ -17,7 +17,12 @@ from django.contrib import admin
 from django.urls import path
 from ChecklistSeiscomp import views
 
+app_name = 'ChecklistSeiscomp'
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('create_view', views.create_view)
+    path('', views.create_view),
+    path('list_view', views.list_view),
+    path('operator_view', views.operator_view),
+    path('<id>/delete_view', views.delete_view)
 ]

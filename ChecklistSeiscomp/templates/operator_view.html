@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+
+{% block body %}
+
+<div class="container" style="padding-top: 2rem;">
+
+    <ul class="collapsible">
+        <li>
+            <div class="collapsible-header white-text waves-effect waves-light blue darken-1"><i
+                    class="material-icons left">add</i>Tambah Operator</div>
+            <div class="collapsible-body">
+                <div class="row">
+                    <form method="POST" enctype="multipart/form-data">
+                        <div class="input-field">
+                            <!-- Security token -->
+                            {% csrf_token %}
+
+                            <!-- Using the formset -->
+                            {{ add_operator_form.as_p }}
+                            <button class="btn waves-effect waves-light blue darken-1" type="submit"
+                                name="action">Tambah Operator
+                            </button>
+                    </form>
+                </div>
+            </div>
+</div>
+</li>
+</ul>
+
+<table>
+    <tr>
+        <th>Nama</th>
+        <th>Aksi</th>
+    </tr>
+    {% for operator in operators %}
+    <tr>
+        <td> <input class="operator_list" type="text" value="{{ operator.name }}" style="color: black; border-bottom: 0;" disabled> </td>
+        <td>
+            <a class="waves-effect waves-light btn"><i class="material-icons center">edit</i></a>
+            <a class="waves-effect waves-light btn red"><i class="material-icons center">delete</i></a>
+        </td>
+
+    </tr>
+    {% endfor %}
+</table>
+
+</div>
+
+{% endblock body %}

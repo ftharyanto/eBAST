@@ -6,25 +6,13 @@ from django.db import models
 class ChecklistSeiscompModel(models.Model):
  
     # fields of the model
-    date = models.DateField()
-    gaps = models.JSONField(null=True)
-    spikes = models.JSONField(null=True)
-    blanks = models.JSONField(null=True)
-    operator = models.CharField(max_length=100)
-    group = models.IntegerField()
-    time = models.IntegerField()
-    gaps_count = models.IntegerField()
-    spikes_count = models.IntegerField()
-    blanks_count = models.IntegerField()
-    total_count = models.IntegerField()
-
-
-
- 
-    # renames the instances of the model
-    # with their title name
-    def __str__(self):
-        return self.title
+    date = models.DateField(null=True)
+    gaps = models.CharField(max_length=300, null=True, blank=True)
+    spikes = models.CharField(max_length=300, null=True, blank=True)
+    blanks = models.CharField(max_length=300, null=True, blank=True)
+    operator = models.CharField(max_length=100, null=True)
+    group = models.IntegerField(null=True)
+    # time = models.IntegerField(null=True, blank=True)
     
-class Operator(models.Model):
-    operator = models.CharField(max_length=100)
+class OperatorModel(models.Model):
+    name = models.CharField(max_length=100)

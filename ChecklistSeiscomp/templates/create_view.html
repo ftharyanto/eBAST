@@ -1,18 +1,30 @@
 {% extends "base.html" %}
-{% load materializecss %}
 
 {% block body %}
 
-<div class="container">
+<div class="container" style="padding-top: 2rem;">
     <form method="POST" enctype="multipart/form-data">
 
         <!-- Security token -->
         {% csrf_token %}
+        <div class="row">
+            <div class="col m6">
+                {{ input_form.date }}
+                {{ input_form.group }}
+                {{ input_form.operator }}
 
+                <!-- 'date',
+                'gaps',
+                'spikes',
+                'blanks',
+                'operator',
+                'group',
+                'gaps', -->
+            </div>
+        </div>
         <!-- Using the formset -->
-        {{ form.as_p }}
 
-        <input type="submit" value="Submit">
+        <button type="submit" class="btn waves-effect waves-light" type="submit" name="action">Submit</button>
     </form>
 </div>
 

@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+<div class="container" style="padding-top: 2rem;">
+
+    
+    <a class="waves-effect waves-light btn blue darken-1" href="/"><i class="material-icons left">add</i>tambah data</a>
+
+    <table>
+        <tr>
+            <th>Tanggal</th>
+            <th>Gaps</th>
+            <th>Spikes</th>
+            <th>Blanks</th>
+            <th>Operator</th>
+            <th>Kelompok</th>
+        </tr>
+        {% for data in dataset %}
+        <tr>
+            <td> {{ data.date }} </td>
+            <td> {{ data.gaps }} </td>
+            <td> {{ data.spikes }} </td>
+            <td> {{ data.blanks }} </td>
+            <td> {{ data.operator }} </td>
+            <td> {{ data.group }} </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</div>
+
+{% endblock body %}
