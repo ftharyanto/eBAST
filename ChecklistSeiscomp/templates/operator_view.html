@@ -1,7 +1,7 @@
 {% extends "base.html" %}
+{% load materializecss %}
 
-
-{% block body %}
+{% block content %}
 
 <div class="container" style="padding-top: 2rem;">
 
@@ -17,7 +17,7 @@
                             {% csrf_token %}
 
                             <!-- Using the formset -->
-                            {{ add_operator_form.as_p }}
+                            {{ add_operator_form }}
                             <button class="btn waves-effect waves-light blue darken-1" type="submit"
                                 name="action">Tambah Operator
                             </button>
@@ -35,10 +35,13 @@
     </tr>
     {% for operator in operators %}
     <tr>
-        <td> <input class="operator_list" type="text" value="{{ operator.name }}" style="color: black; border-bottom: 0;" disabled> </td>
+        <td> <input id="{{ operator.id }}" type="text" value="{{ operator.name }}"
+                style="color: black; border-bottom: 0;" disabled> </td>
         <td>
-            <a class="waves-effect waves-light btn"><i class="material-icons center">edit</i></a>
-            <a class="waves-effect waves-light btn red"><i class="material-icons center">delete</i></a>
+            <a class="waves-effect waves-light btn" id="edit-{{ operator.id }}"><i
+                    class="material-icons center">edit</i></a>
+            <a class="waves-effect waves-light btn red" id="delete-{{ operator.id }}"><i
+                    class="material-icons center">delete</i></a>
         </td>
 
     </tr>
@@ -47,4 +50,15 @@
 
 </div>
 
-{% endblock body %}
+{% endblock content %}
+
+{% block javascript %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.1/js/materialize.min.js"
+    integrity="sha256-SrBfGi+Zp2LhAvy9M1bWOCXztRU9Ztztxmu5BcYPcPE=" crossorigin="anonymous"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var elems = document.querySelectorAll('.collapsible');
+        M.Collapsible.init(elems);
+    });
+</script>
+{% endblock javascript %}

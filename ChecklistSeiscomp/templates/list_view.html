@@ -1,33 +1,42 @@
 {% extends "base.html" %}
-
-{% block body %}
+{% load materializecss %}
+{% block content %}
 
 <div class="container" style="padding-top: 2rem;">
 
-    
+
     <a class="waves-effect waves-light btn blue darken-1" href="/"><i class="material-icons left">add</i>tambah data</a>
 
     <table>
         <tr>
             <th>Tanggal</th>
+            <th>Kelompok</th>
+            <th>Operator</th>
+            <th>Jam</th>
             <th>Gaps</th>
             <th>Spikes</th>
             <th>Blanks</th>
-            <th>Operator</th>
-            <th>Kelompok</th>
+            <th>Aksi</th>
         </tr>
         {% for data in dataset %}
         <tr>
-            <td> {{ data.date }} </td>
+            <td> {{ data.tanggal }} </td>
+            <td> {{ data.kelompok }} </td>
+            <td> {{ data.operator }} </td>
+            <td> {{ data.jam }} </td>
             <td> {{ data.gaps }} </td>
             <td> {{ data.spikes }} </td>
             <td> {{ data.blanks }} </td>
-            <td> {{ data.operator }} </td>
-            <td> {{ data.group }} </td>
+            <td>
+                <a class="waves-effect waves-light btn" id="edit-{{ operator.id }}"><i
+                        class="material-icons center">edit</i></a>
+                <a class="waves-effect waves-light btn red" id="delete-{{ operator.id }}"><i
+                        class="material-icons center">delete</i></a>
+            </td>
         </tr>
         {% endfor %}
     </table>
 
 </div>
 
-{% endblock body %}
+{% endblock content %}

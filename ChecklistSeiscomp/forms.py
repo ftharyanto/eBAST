@@ -1,40 +1,33 @@
 from django import forms
 from .models import ChecklistSeiscompModel, OperatorModel
- 
- 
+
+
 # creating a form
 class InputForm(forms.ModelForm):
- 
+    operator = forms.ModelChoiceField(queryset=OperatorModel.objects.all(), initial=0)
+
     # create meta class
     class Meta:
         # specify model to be used
         model = ChecklistSeiscompModel
+
         # specify fields to be used
-        fields = [
-            'date',
-            'gaps',
-            'spikes',
-            'blanks',
-            'operator',
-            'group',
-            'gaps',
-        ]
+        fields = '__all__'
+
         widgets = {
-            'date': forms.TextInput(attrs={'class': 'input_date'}),
-            'group': forms.TextInput(attrs={'class': 'group'}),
-            
+            'gaps': forms.TextInput(attrs={'placeholder': 'ABCD EFGH'}),
+            'spikes': forms.TextInput(attrs={'placeholder': 'ABCD EFGH'}),
+            'blanks': forms.TextInput(attrs={'placeholder': 'ABCD EFGH'}),
+            'tanggal': forms.TextInput(attrs={'class': 'datepicker', 'placeholder': 'Masukkan Tanggal'}),
         }
-        labels = {
-            'group': ('Kelompok'),
-            'date': ('Tanggal')
-        }
+
 
 class OperatorForm(forms.ModelForm):
     # create meta class
     class Meta:
         # specify model to be used
         model = OperatorModel
- 
+
         # specify fields to be used
         fields = [
             'name',
