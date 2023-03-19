@@ -64,23 +64,10 @@ def update_view(request, id):
     return render(request, "update_view.html", context)
 
 # delete view for details
-def delete_view(request, id):
-    # dictionary for initial data with
-    # field names as keys
-    context ={}
- 
-    # fetch the object related to passed id
-    obj = get_object_or_404(ChecklistSeiscompModel, id = id)
- 
- 
-    if request.method =="POST":
-        # delete object
-        obj.delete()
-        # after deleting redirect to
-        # home page
-        return HttpResponseRedirect("/list_view")
- 
-    return render(request, "delete_view.html", context)
+def operator_delete(request, id):
+    ob = OperatorModel.objects.get(id=id)
+    ob.delete()
+    return HttpResponseRedirect("/operator_view")
 
 def operator_view(request):
     # dictionary for initial data with
