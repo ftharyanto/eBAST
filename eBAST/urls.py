@@ -25,4 +25,6 @@ urlpatterns = [
     path('list_view', views.list_view),
     path('operator_view', views.operator_view, name='operator_view'),
     path('operator_delete/<int:id>/', views.operator_delete, name='operator_delete'),
+    path('operator_update/<int:id>/', views.operator_update, name='operator_update'),
+    path('data_delete/<int:id>/', views.data_delete, name='data_delete'),
 ]

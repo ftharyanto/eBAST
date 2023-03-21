@@ -69,6 +69,17 @@ def operator_delete(request, id):
     ob.delete()
     return HttpResponseRedirect("/operator_view")
 
+def data_delete(request, id):
+    ob = ChecklistSeiscompModel.objects.get(id=id)
+    ob.delete()
+    return HttpResponseRedirect("/list_view")
+
+def operator_update(request, id):
+    ob = OperatorModel.objects.get(id=id)
+    ob.name = request.POST.get('field1')
+    ob.save()
+    return HttpResponseRedirect("/operator_view")
+
 def operator_view(request):
     # dictionary for initial data with
     # field names as keys
