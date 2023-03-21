@@ -4,7 +4,8 @@ from .models import ChecklistSeiscompModel, OperatorModel
 
 # creating a form
 class InputForm(forms.ModelForm):
-    operator = forms.ModelChoiceField(queryset=OperatorModel.objects.all(), initial=0)
+    operator = forms.ModelChoiceField(
+        queryset=OperatorModel.objects.all(), initial=0)
 
     # create meta class
     class Meta:
@@ -15,9 +16,24 @@ class InputForm(forms.ModelForm):
         fields = '__all__'
 
         widgets = {
-            'gaps': forms.TextInput(attrs={'placeholder': 'ABCD EFGH'}),
-            'spikes': forms.TextInput(attrs={'placeholder': 'ABCD EFGH'}),
-            'blanks': forms.TextInput(attrs={'placeholder': 'ABCD EFGH'}),
+            'gaps': forms.TextInput(attrs={
+                'class': 'tooltipped',
+                'data-position': 'bottom',
+                'data-tooltip': 'shift+scroll untuk scrolling secara horizontal',
+                'placeholder': 'ABCD EFGH IJKL MNOP QRST UVWX YZZZ',
+            }),
+            'spikes': forms.TextInput(attrs={
+                'class': 'tooltipped',
+                'data-position': 'bottom',
+                'data-tooltip': 'shift+scroll untuk scrolling secara horizontal',
+                'placeholder': 'ABCD EFGH IJKL MNOP QRST UVWX YZZZ',
+            }),
+            'blanks': forms.TextInput(attrs={
+                'class': 'tooltipped',
+                'data-position': 'bottom',
+                'data-tooltip': 'shift+scroll untuk scrolling secara horizontal',
+                'placeholder': 'ABCD EFGH IJKL MNOP QRST UVWX YZZZ',
+            }),
             'tanggal': forms.TextInput(attrs={'class': 'datepicker', 'placeholder': 'Masukkan Tanggal'}),
         }
 

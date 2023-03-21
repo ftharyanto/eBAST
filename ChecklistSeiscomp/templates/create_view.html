@@ -10,7 +10,8 @@
         <!-- Security token -->
         {% csrf_token %}
         {{ input_form.as_p }}
-        <button type="submit" class="btn waves-effect waves-light blue darken-1" type="submit" name="action">Submit</button>
+        <button type="submit" class="btn waves-effect waves-light blue darken-1" type="submit"
+            name="action">Submit</button>
     </form>
 </div>
 
@@ -33,13 +34,11 @@
         var elems = document.querySelectorAll('select');
         M.FormSelect.init(elems);
     });
+
+    document.addEventListener('DOMContentLoaded', function () {
+        var elems = document.querySelectorAll('.tooltipped');
+        M.Tooltip.init(elems);
+    });
+
 </script>
 {% endblock javascript %}
-
-<!-- 'date',
-                'gaps',
-                'spikes',
-                'blanks',
-                'operator',
-                'group',
-                'gaps', -->
