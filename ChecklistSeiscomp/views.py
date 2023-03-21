@@ -15,6 +15,7 @@ def create_view(request):
     input_form = InputForm(request.POST or None)
     if input_form.is_valid():
         input_form.save()
+        input_form = InputForm()
          
     context['input_form']= input_form
     return render(request, "create_view.html", context)
@@ -91,6 +92,9 @@ def operator_view(request):
     add_operator_form = OperatorForm(request.POST or None)
     if add_operator_form.is_valid():
         add_operator_form.save()
+        
+        # Resetting the form after it has been submitted.
+        add_operator_form = OperatorForm() 
          
     context['add_operator_form']= add_operator_form
 
