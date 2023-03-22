@@ -21,10 +21,11 @@ app_name = 'ChecklistSeiscomp'
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.create_view),
-    path('list_view', views.list_view),
-    path('operator_view', views.operator_view, name='operator_view'),
-    path('operator_delete/<int:id>/', views.operator_delete, name='operator_delete'),
-    path('operator_update/<int:id>/', views.operator_update, name='operator_update'),
-    path('data_delete/<int:id>/', views.data_delete, name='data_delete'),
+    path('', views.create_view, name='checklist-seiscomp'),
+    path('checklist-seiscomp', views.create_view, name='checklist-seiscomp'),
+    path('checklist-seiscomp/list_view', views.list_view, name='list_view'),
+    path('checklist-seiscomp/operator_view', views.operator_view, name='operator_view'),
+    path('checklist-seiscomp/operator_delete/<int:id>/', views.operator_delete, name='operator_delete'),
+    path('checklist-seiscomp/operator_update/<int:id>/', views.operator_update, name='operator_update'),
+    path('checklist-seiscomp/data_delete/<int:id>/', views.data_delete, name='data_delete'),
 ]

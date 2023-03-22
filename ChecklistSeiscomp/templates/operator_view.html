@@ -68,18 +68,6 @@
         M.Collapsible.init(elems);
     });
 
-    function submitForm() {
-        // Get the first form with the name
-        // Usually the form name is not repeated
-        // but duplicate names are possible in HTML
-        // Therefore to work around the issue, enforce the correct index
-        var frm = document.getElementsByName('contact-form')[0];
-        frm.submit(); // Submit the form
-        frm.reset();  // Reset all form data
-        return false; // Prevent page refresh
-    }
-
-
     var op_delete = function (id) {
         var delBtn = document.getElementById('delete_confirmation_' + id);
         delBtn.style.visibility = "visible";
@@ -88,7 +76,7 @@
         delBtnNo.classList.remove("red");
         delBtnNo.classList.add("white", "black-text");
         delBtnNo.onmouseup = '';
-        return delBtnNo.setAttribute('href', '/operator_view')
+        return delBtnNo.setAttribute('href', '/checklist-seiscomp/operator_view')
     }
 
     var editOperator = function (id) {

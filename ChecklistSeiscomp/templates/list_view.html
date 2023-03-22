@@ -5,7 +5,12 @@
 <div class="container" style="padding-top: 2rem;">
 
 
-    <a class="waves-effect waves-light btn blue darken-1" href="/"><i class="material-icons left">add</i>tambah data</a>
+    <a class="waves-effect waves-light btn blue darken-1" href="{% url 'checklist-seiscomp' %}"><i
+            class="material-icons left">add</i>tambah data</a>
+    <a class="waves-effect waves-light btn red darken-1" href="/"><i class="material-icons left">picture_as_pdf</i>Buat
+        Laporan PDF</a>
+    <a class="waves-effect waves-light btn green darken-1" href="/"><i class="fa-solid fa-file-excel" style="padding-right: 1rem;"></i>Buat Laporan
+        Excel</a>
 
     <table>
         <tr>
@@ -59,7 +64,7 @@
         delBtnNo.classList.add("white", "black-text");
         delBtnNo.onmouseup = '';
 
-        return delBtnNo.setAttribute('href', '/list_view')
+        return delBtnNo.setAttribute('href', '/checklist-seiscomp/list_view')
     }
 
 </script>
