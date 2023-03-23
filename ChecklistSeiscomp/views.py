@@ -11,6 +11,7 @@ def create_view(request):
     # dictionary for initial data with
     # field names as keys
     context = {}
+    context['dataset'] = ChecklistSeiscompModel.objects.all().order_by('-tanggal')[:2]
 
     # add the dictionary during initialization
     input_form = InputForm(request.POST or None)
