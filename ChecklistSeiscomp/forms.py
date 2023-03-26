@@ -34,6 +34,12 @@ class InputForm(forms.ModelForm):
                 'data-tooltip': 'shift+scroll untuk scrolling secara horizontal',
                 'placeholder': 'ABCD EFGH IJKL MNOP QRST UVWX YZZZ',
             }),
+            'slmon': forms.TextInput(attrs={
+                'class': 'tooltipped',
+                'data-position': 'bottom',
+                'data-tooltip': 'shift+scroll untuk scrolling secara horizontal',
+                'placeholder': 'ABCD EFGH IJKL MNOP QRST UVWX YZZZ',
+            }),
             'tanggal': forms.TextInput(attrs={'class': 'datepicker', 'placeholder': 'Masukkan Tanggal'}),
         }
 

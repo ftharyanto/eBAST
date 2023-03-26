@@ -21,6 +21,7 @@
             <th>Gaps</th>
             <th>Spikes</th>
             <th>Blanks</th>
+            <th>Slmon</th>
             <th>Aksi</th>
         </tr>
         {% for data in dataset %}
@@ -32,6 +33,7 @@
             <td> {{ data.gaps }} </td>
             <td> {{ data.spikes }} </td>
             <td> {{ data.blanks }} </td>
+            <td> {{ data.slmon }} </td>
             <td>
                 <a class="waves-effect waves-light btn" id="edit-{{ operator.id }}" style="display: none;"><i
                         class="material-icons center">edit</i></a>

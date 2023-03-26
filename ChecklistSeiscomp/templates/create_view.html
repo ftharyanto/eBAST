@@ -29,7 +29,7 @@
             <th>Gaps</th>
             <th>Spikes</th>
             <th>Blanks</th>
-            <th>Aksi</th>
+            <th>Slmon</th>
         </tr>
         {% for data in dataset %}
         <tr>
@@ -40,16 +40,7 @@
             <td> {{ data.gaps }} </td>
             <td> {{ data.spikes }} </td>
             <td> {{ data.blanks }} </td>
-            <td>
-                <a class="waves-effect waves-light btn" id="edit-{{ operator.id }}" style="display: none;"><i
-                        class="material-icons center">edit</i></a>
-                <a id="data_del_btn{{ data.id }}" onmouseup="data_del({{ data.id }})"
-                    class="waves-effect waves-light btn red" id="delete-{{ operator.id }}"><i
-                        class="material-icons center">delete</i></a>
-                <a id="delete_confirmation_{{ data.id }}" href="{% url 'data_delete' data.id %}"
-                    class="waves-effect waves-light btn red" style="visibility: hidden;"><i
-                        class="material-icons center"></i>yes</a>
-            </td>
+            <td> {{ data.slmon }} </td>
         </tr>
         {% endfor %}
     </table>
