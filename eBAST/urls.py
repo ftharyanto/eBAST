@@ -28,4 +28,5 @@ urlpatterns = [
     path('checklist-seiscomp/operator_delete/<int:id>/', views.operator_delete, name='operator_delete'),
     path('checklist-seiscomp/operator_update/<int:id>/', views.operator_update, name='operator_update'),
     path('checklist-seiscomp/data_delete/<int:id>/', views.data_delete, name='data_delete'),
+    path('export/', views.export_data, name='export'),
 ]

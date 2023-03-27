@@ -1,6 +1,8 @@
+from django.http import HttpResponse
 from django.shortcuts import (get_object_or_404,
                               render,
                               HttpResponseRedirect)
+import openpyxl
 
 # relative import of forms
 from .models import ChecklistSeiscompModel, OperatorModel
@@ -135,3 +137,18 @@ def edit_operator_name(request, id):
     context["form"] = form
 
     return render(request, "operator_view.html", context)
+
+def export_data(request):
+    from django.conf import settings
+    # Get the path of the Excel file in your static folder
+    file_path = str(settings.STATIC_ROOT) + '/ChecklistSeiscomp/template.xlsx'
+    # Create a workbook object
+    wb = openpyxl.load_workbook(file_path)
+
+    # Save the workbook to a byte stream
+    response = HttpResponse(content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+    wb.save(response)
+    # Set the file name and attachment header
+    response['Content-Disposition'] = 'attachment; filename="data.xlsx"'
+    # Return the response
+    return response
