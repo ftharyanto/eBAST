@@ -138,16 +138,37 @@ def edit_operator_name(request, id):
 
     return render(request, "operator_view.html", context)
 
-def export_data(request):
+def export_excel_instant():
+    """This function is used to export excel file containing last 2 records"""
+
     from django.conf import settings
-    # Get the path of the Excel file in your static folder
+    from .output_generator import generate_excel
+
+    data = ChecklistSeiscompModel.objects.all().order_by('-tanggal')[:2]
+    metadata = {'kelompok': data[0].kelompok,
+            'operator1': data[0].operator,
+            'operator2': data[1].operator,
+            'tanggal': 'Minggu, 19 Februari 2023'}
+    
+    data1 = {'gaps': data[1].gaps.split(),
+             'spikes': data[1].spikes.split(),
+             'blanks': data[1].blanks.split()}
+    
+    data2 = {'gaps': data[0].gaps.split(),
+             'spikes': data[0].spikes.split(),
+             'blanks': data[0].blanks.split()}
+
+    # Get the path of the Excel file in static folder
     file_path = str(settings.STATIC_ROOT) + '/ChecklistSeiscomp/template.xlsx'
-    # Create a workbook object
-    wb = openpyxl.load_workbook(file_path)
 
     # Save the workbook to a byte stream
     response = HttpResponse(content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
-    wb.save(response)
+    generate_excel(filename=file_path,
+                   response=response,
+                   metadata=metadata,
+                   data1=data1,
+                   data2=data2)
+    
     # Set the file name and attachment header
     response['Content-Disposition'] = 'attachment; filename="data.xlsx"'
     # Return the response
