@@ -1,35 +1,33 @@
 {% extends "base.html" %}
 {% load materializecss %}
 
-
 {% block content %}
-
 <div class="container" style="padding-top: 2rem; padding-bottom: 2rem;">
     <div class="row">
         <form method="POST" enctype="multipart/form-data">
             <!-- Security token -->
             {% csrf_token %}
-            
-            <div class="col m6">
+
+            <div class="col m6 s12">
                 {{ input_form.tanggal|materializecss}}
             </div>
 
-            <div class="col m6">
+            <div class="col m6 s12">
                 {{ input_form.jam|materializecss}}
             </div>
-            
-            <div class="col m6">
+
+            <div class="col m6 s12">
                 {{ input_form.kelompok|materializecss}}
             </div>
 
-            <div class="col m6">
+            <div class="col m6 s12">
                 {{ input_form.operator|materializecss}}
             </div>
 
             <div>
                 {{ input_form.gaps|materializecss}}
             </div>
-            
+
             <div>
                 {{ input_form.spikes|materializecss}}
             </div>
@@ -49,7 +47,8 @@
 
     <br><br>
     <h4>Data terakhir</h4>
-    <a class="waves-effect waves-light btn red darken-1" href="/"><i class="material-icons left">picture_as_pdf</i>Buat
+    <a style="display: none;" class="waves-effect waves-light btn red darken-1" href="/"><i
+            class="material-icons left">picture_as_pdf</i>Buat
         Laporan PDF</a>
     <a class="waves-effect waves-light btn green darken-1"
         onclick="window.location.href='{% url 'export_excel_instant' %}'"><i class="fa-solid fa-file-excel"
@@ -80,14 +79,9 @@
         {% endfor %}
     </table>
 </div>
-
-
 {% endblock content %}
 
 {% block javascript %}
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.1/js/materialize.min.js"
-    integrity="sha256-SrBfGi+Zp2LhAvy9M1bWOCXztRU9Ztztxmu5BcYPcPE=" crossorigin="anonymous"></script>
-
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         var elems = document.querySelectorAll('.datepicker');

@@ -32,7 +32,7 @@ def list_view(request):
     context = {}
 
     # add the dictionary during initialization
-    context["dataset"] = ChecklistSeiscompModel.objects.all()
+    context["dataset"] = ChecklistSeiscompModel.objects.all().order_by('-tanggal')
 
     return render(request, "list_view.html", context)
 

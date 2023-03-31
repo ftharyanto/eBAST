@@ -1,13 +1,13 @@
 {% extends "base.html" %}
 {% load materializecss %}
-{% block content %}
 
+{% block content %}
 <div class="container" style="padding-top: 2rem;">
 
 
     <a class="waves-effect waves-light btn blue darken-1" href="{% url 'checklist-seiscomp' %}"><i
             class="material-icons left">add</i>tambah data</a>
-    <a class="waves-effect waves-light btn red darken-1" href="/"><i class="material-icons left">picture_as_pdf</i>Buat
+    <a style="display: none;" class="waves-effect waves-light btn red darken-1" href="/"><i class="material-icons left">picture_as_pdf</i>Buat
         Laporan PDF</a>
     <a class="waves-effect waves-light btn green darken-1" href="/"><i class="fa-solid fa-file-excel" style="padding-right: 1rem;"></i>Buat Laporan
         Excel</a>
@@ -49,13 +49,9 @@
     </table>
 
 </div>
-
 {% endblock content %}
 
 {% block javascript %}
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.1/js/materialize.min.js"
-    integrity="sha256-SrBfGi+Zp2LhAvy9M1bWOCXztRU9Ztztxmu5BcYPcPE=" crossorigin="anonymous"></script>
-
 <script>
     var data_del = function (id) {
         var delBtn = document.getElementById('delete_confirmation_' + id)

@@ -2,7 +2,6 @@
 {% load materializecss %}
 
 {% block content %}
-
 <div class="container" style="padding-top: 2rem;">
 
     <ul class="collapsible">
@@ -37,6 +36,7 @@
     {% for operator in operators %}
     <tr>
         <td>
+            {{ forloop.counter}}
         </td>
         <td> <input id="name_{{ operator.id }}" type="text" value="{{ operator.name }}"
                 style="color: black; border-bottom: 0;" disabled> </td>
@@ -56,12 +56,9 @@
 </table>
 
 </div>
-
 {% endblock content %}
 
 {% block javascript %}
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.1/js/materialize.min.js"
-    integrity="sha256-SrBfGi+Zp2LhAvy9M1bWOCXztRU9Ztztxmu5BcYPcPE=" crossorigin="anonymous"></script>
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         var elems = document.querySelectorAll('.collapsible');

@@ -11,7 +11,9 @@
     <title>Checklist Seiscomp</title>
     {% block css %}
     <!-- font awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- Materialize CSS -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -25,18 +27,34 @@
     <nav class="nav-wrapper blue darken-1">
         <div class="container">
             <div class="nav-wrapper blue darken-1">
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                 <ul id="nav-mobile" class="left hide-on-med-and-down">
-                    <li><a href="{% url 'checklist-seiscomp' %}">Input Data</a></li>
-                    <li><a href="{% url 'list_view' %}">Inventory</a></li>
-                    <li><a href="{% url 'operator_view' %}">Operator</a></li>
+                    <li {% if request.resolver_match.url_name == 'checklist-seiscomp' %}class="active"{% endif %}><a href="{% url 'checklist-seiscomp' %}">Input Data</a></li>
+                    <li {% if request.resolver_match.url_name == 'list_view' %}class="active"{% endif %}><a href="{% url 'list_view' %}">Inventory</a></li>
+                    <li {% if request.resolver_match.url_name == 'operator_view' %}class="active"{% endif %}><a href="{% url 'operator_view' %}">Operator</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    {% block content %}
+    <ul class="sidenav" id="mobile-demo">
+        <li {% if request.resolver_match.url_name == 'checklist-seiscomp' %}class="active"{% endif %}><a href="{% url 'checklist-seiscomp' %}">Input Data</a></li>
+        <li {% if request.resolver_match.url_name == 'list_view' %}class="active"{% endif %}><a href="{% url 'list_view' %}">Inventory</a></li>
+        <li {% if request.resolver_match.url_name == 'operator_view' %}class="active"{% endif %}><a href="{% url 'operator_view' %}">Operator</a></li>
+    </ul>
 
+    {% block content %}
     {% endblock content %}
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.1/js/materialize.min.js"
+        integrity="sha256-SrBfGi+Zp2LhAvy9M1bWOCXztRU9Ztztxmu5BcYPcPE=" crossorigin="anonymous"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll('.sidenav');
+            M.Sidenav.init(elems);
+        });
+    </script>
 
     {% block javascript %}
     {% endblock javascript %}
