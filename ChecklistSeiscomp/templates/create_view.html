@@ -5,20 +5,54 @@
 {% block content %}
 
 <div class="container" style="padding-top: 2rem; padding-bottom: 2rem;">
-    <form method="POST" enctype="multipart/form-data">
+    <div class="row">
+        <form method="POST" enctype="multipart/form-data">
+            <!-- Security token -->
+            {% csrf_token %}
+            
+            <div class="col m6">
+                {{ input_form.tanggal|materializecss}}
+            </div>
 
-        <!-- Security token -->
-        {% csrf_token %}
-        {{ input_form.as_p }}
-        <button type="submit" class="btn waves-effect waves-light blue darken-1" type="submit"
-            name="action">Submit</button>
-    </form>
+            <div class="col m6">
+                {{ input_form.jam|materializecss}}
+            </div>
+            
+            <div class="col m6">
+                {{ input_form.kelompok|materializecss}}
+            </div>
+
+            <div class="col m6">
+                {{ input_form.operator|materializecss}}
+            </div>
+
+            <div>
+                {{ input_form.gaps|materializecss}}
+            </div>
+            
+            <div>
+                {{ input_form.spikes|materializecss}}
+            </div>
+
+            <div>
+                {{ input_form.blanks|materializecss}}
+            </div>
+
+            <div>
+                {{ input_form.slmon|materializecss}}
+            </div>
+
+            <button type="submit" class="btn waves-effect waves-light blue darken-1" type="submit"
+                name="action">Submit</button>
+        </form>
+    </div>
 
     <br><br>
     <h4>Data terakhir</h4>
     <a class="waves-effect waves-light btn red darken-1" href="/"><i class="material-icons left">picture_as_pdf</i>Buat
         Laporan PDF</a>
-    <a class="waves-effect waves-light btn green darken-1" onclick="window.location.href='{% url 'export' %}'"><i class="fa-solid fa-file-excel"
+    <a class="waves-effect waves-light btn green darken-1"
+        onclick="window.location.href='{% url 'export_excel_instant' %}'"><i class="fa-solid fa-file-excel"
             style="padding-right: 1rem;"></i>Buat Laporan
         Excel</a>
     <table>

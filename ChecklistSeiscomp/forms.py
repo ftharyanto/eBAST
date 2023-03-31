@@ -34,11 +34,11 @@ class InputForm(forms.ModelForm):
                 'data-tooltip': 'shift+scroll untuk scrolling secara horizontal',
                 'placeholder': 'ABCD EFGH IJKL MNOP QRST UVWX YZZZ',
             }),
-            'slmon': forms.TextInput(attrs={
+            'slmon': forms.NumberInput(attrs={
                 'class': 'tooltipped',
                 'data-position': 'bottom',
                 'data-tooltip': 'shift+scroll untuk scrolling secara horizontal',
-                'placeholder': 'ABCD EFGH IJKL MNOP QRST UVWX YZZZ',
+                'placeholder': 'Jumlah sensor yang delay lebih dari 30 menit. Contoh: 30',
             }),
             'tanggal': forms.TextInput(attrs={'class': 'datepicker', 'placeholder': 'Masukkan Tanggal'}),
         }

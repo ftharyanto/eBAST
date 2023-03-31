@@ -36,21 +36,6 @@ def list_view(request):
 
     return render(request, "list_view.html", context)
 
-# pass id attribute from urls
-
-
-def detail_view(request, id):
-    # dictionary for initial data with
-    # field names as keys
-    context = {}
-
-    # add the dictionary during initialization
-    context["data"] = ChecklistSeiscompModel.objects.get(id=id)
-
-    return render(request, "detail_view.html", context)
-
-# update view for details
-
 
 def update_view(request, id):
     # dictionary for initial data with
@@ -73,8 +58,6 @@ def update_view(request, id):
     context["form"] = form
 
     return render(request, "update_view.html", context)
-
-# delete view for details
 
 
 def operator_delete(request, id):
@@ -138,7 +121,8 @@ def edit_operator_name(request, id):
 
     return render(request, "operator_view.html", context)
 
-def export_excel_instant():
+
+def export_excel_instant(request):
     """This function is used to export excel file containing last 2 records"""
 
     from django.conf import settings
@@ -173,3 +157,13 @@ def export_excel_instant():
     response['Content-Disposition'] = 'attachment; filename="data.xlsx"'
     # Return the response
     return response
+
+
+def export_pdf_instant(request):
+  from django.http import FileResponse
+  
+  file = open('path/to/your/pdf/file.pdf', 'rb')
+  response = FileResponse(file)
+  response['Content-Type'] = 'application/pdf'
+  response['Content-Disposition'] = 'inline; filename="file.pdf"'
+  return response
