@@ -40,7 +40,7 @@ class InputForm(forms.ModelForm):
                 'data-tooltip': 'shift+scroll untuk scrolling secara horizontal',
                 'placeholder': 'Jumlah sensor yang delay lebih dari 30 menit. Contoh: 30',
             }),
-            'tanggal': forms.TextInput(attrs={'class': 'datepicker', 'placeholder': 'Masukkan Tanggal'}),
+            'tanggal': forms.DateInput(),
         }
 
 

@@ -17,7 +17,7 @@ WAKTU = (
 class ChecklistSeiscompModel(models.Model):
  
     # fields of the model
-    tanggal = models.TextField(null=True,)
+    tanggal = models.DateField()
     jam = models.CharField(max_length=20, choices=WAKTU, default='12:00 WIB')
     kelompok = models.IntegerField(choices=KELOMPOK, default=1)
     operator = models.TextField(null=True,)
@@ -27,7 +27,7 @@ class ChecklistSeiscompModel(models.Model):
     slmon = models.PositiveIntegerField(null=True, blank=True)
 
     def __str__(self):
-        return f"Kelompok {self.kelompok}"
+        return self.tanggal
     
 class OperatorModel(models.Model):
     name = models.CharField(max_length=100)
