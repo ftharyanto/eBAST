@@ -1,8 +1,15 @@
-# from django.urls import path
-# from .views import create_view
+from django.urls import path
+from . import views
 
-# app_name = 'ChecklistSeiscomp'
+app_name = 'ChecklistSeiscomp'
 
-# urlpatterns = [
-#     path('create_view/', create_view, name='create_view')
-# ]
+urlpatterns = [
+    path('', views.create_view, name='home'),
+    path('create_view/', views.create_view, name='create_view'),
+    path('list_view', views.list_view, name='list_view'),
+    path('operator_view', views.operator_view, name='operator_view'),
+    path('operator_delete/<int:id>/', views.operator_delete, name='operator_delete'),
+    path('operator_update/<int:id>/', views.operator_update, name='operator_update'),
+    path('data_delete/<int:id>/', views.data_delete, name='data_delete'),
+    path('export_excel_instant/', views.export_excel_instant, name='export_excel_instant'),
+]

@@ -5,7 +5,7 @@
 <div class="container" style="padding-top: 2rem;">
 
 
-    <a class="waves-effect waves-light btn blue darken-1" href="{% url 'checklist-seiscomp' %}"><i
+    <a class="waves-effect waves-light btn blue darken-1" href="{% url 'ChecklistSeiscomp:home' %}"><i
             class="material-icons left">add</i>tambah data</a>
     <a style="display: none;" class="waves-effect waves-light btn red darken-1" href="/"><i class="material-icons left">picture_as_pdf</i>Buat
         Laporan PDF</a>
@@ -40,7 +40,7 @@
                 <a id="data_del_btn{{ data.id }}" onmouseup="data_del({{ data.id }})"
                     class="waves-effect waves-light btn red" id="delete-{{ operator.id }}"><i
                         class="material-icons center">delete</i></a>
-                <a id="delete_confirmation_{{ data.id }}" href="{% url 'data_delete' data.id %}"
+                <a id="delete_confirmation_{{ data.id }}" href="{% url 'ChecklistSeiscomp:data_delete' data.id %}"
                     class="waves-effect waves-light btn red" style="visibility: hidden;"><i
                         class="material-icons center"></i>yes</a>
             </td>

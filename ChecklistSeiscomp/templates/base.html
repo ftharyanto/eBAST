@@ -33,18 +33,18 @@
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                 <a href="https://github.com/ftharyanto/eBAST" target="_blank" class="tooltipped right" data-tooltip="Source Code"><i class="fa-brands fa-github"></i></a>
                 <ul id="nav-mobile" class="left hide-on-med-and-down">
-                    <li {% if request.resolver_match.url_name == 'checklist-seiscomp' %}class="active"{% endif %}><a href="{% url 'checklist-seiscomp' %}">Input Data</a></li>
-                    <li {% if request.resolver_match.url_name == 'list_view' %}class="active"{% endif %}><a href="{% url 'list_view' %}">Inventory</a></li>
-                    <li {% if request.resolver_match.url_name == 'operator_view' %}class="active"{% endif %}><a href="{% url 'operator_view' %}">Operator</a></li>
+                    <li {% if request.resolver_match.url_name == 'home' %}class="active"{% endif %}><a href="{% url 'ChecklistSeiscomp:home' %}">Input Data</a></li>
+                    <li {% if request.resolver_match.url_name == 'list_view' %}class="active"{% endif %}><a href="{% url 'ChecklistSeiscomp:list_view' %}">Inventory</a></li>
+                    <li {% if request.resolver_match.url_name == 'operator_view' %}class="active"{% endif %}><a href="{% url 'ChecklistSeiscomp:operator_view' %}">Operator</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
     <ul class="sidenav" id="mobile-demo">
-        <li {% if request.resolver_match.url_name == 'checklist-seiscomp' %}class="active"{% endif %}><a href="{% url 'checklist-seiscomp' %}">Input Data</a></li>
-        <li {% if request.resolver_match.url_name == 'list_view' %}class="active"{% endif %}><a href="{% url 'list_view' %}">Inventory</a></li>
-        <li {% if request.resolver_match.url_name == 'operator_view' %}class="active"{% endif %}><a href="{% url 'operator_view' %}">Operator</a></li>
+        <li {% if request.resolver_match.url_name == 'home' %}class="active"{% endif %}><a href="{% url 'ChecklistSeiscomp:home' %}">Input Data</a></li>
+        <li {% if request.resolver_match.url_name == 'list_view' %}class="active"{% endif %}><a href="{% url 'ChecklistSeiscomp:list_view' %}">Inventory</a></li>
+        <li {% if request.resolver_match.url_name == 'operator_view' %}class="active"{% endif %}><a href="{% url 'ChecklistSeiscomp:operator_view' %}">Operator</a></li>
         <li><div class="divider"></div></li>
         <li><a href="https://github.com/ftharyanto/eBAST" target="_blank" class="down"><i class="fa-brands fa-github"></i> Source Code</a></li>
     </ul>

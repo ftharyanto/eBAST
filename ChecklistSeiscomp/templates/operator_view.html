@@ -46,7 +46,7 @@
                     class="material-icons center">edit</i></a>
             <a id="op_del_btn_{{ operator.id }}" class="waves-effect waves-light btn red"
                 onmouseup="op_delete({{ operator.id }})"><i class="material-icons center">delete</i></a>
-            <a id="delete_confirmation_{{ operator.id }}" href="{% url 'operator_delete' operator.id %}"
+            <a id="delete_confirmation_{{ operator.id }}" href="{% url 'ChecklistSeiscomp:operator_delete' operator.id %}"
                 class="waves-effect waves-light btn red" style="visibility: hidden;"><i
                     class="material-icons center"></i>yes</a>
         </td>
