@@ -127,22 +127,46 @@ def export_excel_instant(request):
 
     from django.conf import settings
     from .output_generator import generate_excel
+    import ast
 
 
     data = ChecklistSeiscompModel.objects.all().order_by('-tanggal')[:2]
-    print([data[0].tanggal, data[1].tanggal])
     metadata = {'kelompok': data[0].kelompok,
             'operator1': data[0].operator,
             'operator2': data[1].operator,
             'tanggal': date_range_to_string([data[1].tanggal, data[0].tanggal])}
     
-    data1 = {'gaps': str(data[1].gaps).split(),
-             'spikes': str(data[1].spikes).split(),
-             'blanks': str(data[1].blanks).split()}
-    
-    data2 = {'gaps': str(data[0].gaps).split(),
-             'spikes': str(data[0].spikes).split(),
-             'blanks': str(data[0].blanks).split()}
+    data1 = {}
+    if data[1].gaps:
+        data1['gaps'] = ast.literal_eval(data[1].gaps)
+    else:
+        data1['gaps'] = []
+
+    if data[1].spikes:
+        data1['spikes'] = ast.literal_eval(data[1].spikes)
+    else:
+        data1['spikes'] = []
+
+    if data[1].blanks:
+        data1['blanks'] = ast.literal_eval(data[1].blanks)
+    else:
+        data1['blanks'] = []    
+
+    data2 = {}
+    if data[0].gaps:
+        data2['gaps'] = ast.literal_eval(data[0].gaps)
+    else:
+        data2['gaps'] = []    
+
+    if data[0].spikes:
+        data2['spikes'] = ast.literal_eval(data[0].spikes)
+    else:
+        data2['spikes'] = [] 
+
+    if data[0].blanks:
+        data2['blanks'] = ast.literal_eval(data[0].blanks)
+    else:
+        data2['blanks'] = [] 
 
     # Get the path of the Excel file in static folder
     file_path = str(settings.STATIC_ROOT) + '/ChecklistSeiscomp/template.xlsx'
