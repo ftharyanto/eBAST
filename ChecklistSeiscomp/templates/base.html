@@ -31,6 +31,7 @@
         <div class="container">
             <div class="nav-wrapper blue darken-1">
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                <a href="https://github.com/ftharyanto/eBAST" target="_blank" class="tooltipped right" data-tooltip="Source Code"><i class="fa-brands fa-github"></i></a>
                 <ul id="nav-mobile" class="left hide-on-med-and-down">
                     <li {% if request.resolver_match.url_name == 'checklist-seiscomp' %}class="active"{% endif %}><a href="{% url 'checklist-seiscomp' %}">Input Data</a></li>
                     <li {% if request.resolver_match.url_name == 'list_view' %}class="active"{% endif %}><a href="{% url 'list_view' %}">Inventory</a></li>
@@ -44,6 +45,8 @@
         <li {% if request.resolver_match.url_name == 'checklist-seiscomp' %}class="active"{% endif %}><a href="{% url 'checklist-seiscomp' %}">Input Data</a></li>
         <li {% if request.resolver_match.url_name == 'list_view' %}class="active"{% endif %}><a href="{% url 'list_view' %}">Inventory</a></li>
         <li {% if request.resolver_match.url_name == 'operator_view' %}class="active"{% endif %}><a href="{% url 'operator_view' %}">Operator</a></li>
+        <li><div class="divider"></div></li>
+        <li><a href="https://github.com/ftharyanto/eBAST" target="_blank" class="down"><i class="fa-brands fa-github"></i> Source Code</a></li>
     </ul>
 
     {% block content %}
@@ -57,6 +60,19 @@
             var elems = document.querySelectorAll('.sidenav');
             M.Sidenav.init(elems);
         });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll('.tooltipped');
+            M.Tooltip.init(elems);
+        });
+        
+        var tds = document.getElementsByTagName("td");
+        for (var i = 0; i < tds.length; i++) {
+            if (tds[i].innerHTML == " None ") {
+                tds[i].style.color = "gray";
+                tds[i].style.fontStyle = "italic"
+            }
+    }
     </script>
 
     {% block javascript %}
