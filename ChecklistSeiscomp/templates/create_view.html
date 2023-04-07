@@ -9,7 +9,8 @@
             {% csrf_token %}
 
             <div class="col m6 s12">
-                {{ input_form.tanggal|materializecss}}
+                <label for="tanggal">Tanggal (format: yyyy-mm-dd)</label>
+                {{ input_form.tanggal }}
             </div>
 
             <div class="col m6 s12">
@@ -67,7 +68,7 @@
         </tr>
         {% for data in dataset %}
         <tr>
-            <td> {{ data.tanggal }} </td>
+            <td> {{ data.tanggal|date:'Y-m-d' }} </td>
             <td> {{ data.kelompok }} </td>
             <td> {{ data.operator }} </td>
             <td> {{ data.jam }} </td>
@@ -83,13 +84,14 @@
 
 {% block javascript %}
 <script>
-    // document.addEventListener('DOMContentLoaded', function () {
-    //     var elems = document.querySelectorAll('.datepicker');
-    //     var options = {
-    //         'autoClose': true,
-    //     };
-    //     M.Datepicker.init(elems, options);
-    // });
+    document.addEventListener('DOMContentLoaded', function () {
+        var elems = document.querySelectorAll('.datepicker');
+        var options = {
+            'autoClose': true,
+            'format': 'yyyy-mm-dd'
+        };
+        M.Datepicker.init(elems, options);
+    });
 
     document.addEventListener('DOMContentLoaded', function () {
         var elems = document.querySelectorAll('select');

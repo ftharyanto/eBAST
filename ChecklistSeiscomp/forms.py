@@ -1,6 +1,6 @@
 from django import forms
 from .models import ChecklistSeiscompModel, OperatorModel
-
+from django.utils.formats import date_format
 
 # creating a form
 class InputForm(forms.ModelForm):
@@ -40,7 +40,12 @@ class InputForm(forms.ModelForm):
                 'data-tooltip': 'shift+scroll untuk scrolling secara horizontal',
                 'placeholder': 'Jumlah sensor yang delay lebih dari 30 menit. Contoh: 30',
             }),
-            'tanggal': forms.DateInput(),
+            'tanggal': forms.TextInput(attrs={
+                'class': 'datepicker',
+                'name': 'tanggal',
+                'placeholder': 'yyyy-mm-dd',
+
+            })
         }
 
 

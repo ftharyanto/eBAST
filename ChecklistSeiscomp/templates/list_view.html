@@ -26,7 +26,7 @@
         </tr>
         {% for data in dataset %}
         <tr>
-            <td> {{ data.tanggal }} </td>
+            <td> {{ data.tanggal|date:'Y-m-d' }} </td>
             <td> {{ data.kelompok }} </td>
             <td> {{ data.operator }} </td>
             <td> {{ data.jam }} </td>
