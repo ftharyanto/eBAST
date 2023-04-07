@@ -128,19 +128,21 @@ def export_excel_instant(request):
     from django.conf import settings
     from .output_generator import generate_excel
 
+
     data = ChecklistSeiscompModel.objects.all().order_by('-tanggal')[:2]
+    print([data[0].tanggal, data[1].tanggal])
     metadata = {'kelompok': data[0].kelompok,
             'operator1': data[0].operator,
             'operator2': data[1].operator,
-            'tanggal': 'Minggu, 19 Februari 2023'}
+            'tanggal': date_range_to_string([data[1].tanggal, data[0].tanggal])}
     
-    data1 = {'gaps': data[1].gaps.split(),
-             'spikes': data[1].spikes.split(),
-             'blanks': data[1].blanks.split()}
+    data1 = {'gaps': str(data[1].gaps).split(),
+             'spikes': str(data[1].spikes).split(),
+             'blanks': str(data[1].blanks).split()}
     
-    data2 = {'gaps': data[0].gaps.split(),
-             'spikes': data[0].spikes.split(),
-             'blanks': data[0].blanks.split()}
+    data2 = {'gaps': str(data[0].gaps).split(),
+             'spikes': str(data[0].spikes).split(),
+             'blanks': str(data[0].blanks).split()}
 
     # Get the path of the Excel file in static folder
     file_path = str(settings.STATIC_ROOT) + '/ChecklistSeiscomp/template.xlsx'
@@ -167,3 +169,26 @@ def export_pdf_instant(request):
   response['Content-Type'] = 'application/pdf'
   response['Content-Disposition'] = 'inline; filename="file.pdf"'
   return response
+
+
+def date_range_to_string(date_range):
+    from datetime import date
+    import locale
+    
+    weekdays = ['Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu', 'Minggu']
+    date_strings = date_range
+    start_date = date_strings[0].strftime('%d')
+    end_date = date_strings[-1].strftime('%d')
+    locale.setlocale(locale.LC_TIME, "id_ID.utf8")
+    start_month = date_strings[0].strftime('%B')
+    end_month = date_strings[-1].strftime('%B')
+    start_year = date_strings[0].strftime('%Y')
+    end_year = date_strings[-1].strftime('%Y')
+    start_weekday = weekdays[date_strings[0].weekday()]
+    end_weekday = weekdays[date_strings[-1].weekday()]
+    if (start_year != end_year) and (start_month != end_month):
+        return f"{start_weekday} - {end_weekday}, {start_date} {start_month} {start_year} - {end_date} {end_month} {end_year}"
+    elif (start_year == end_year) and (start_month != end_month):
+        return f"{start_weekday} - {end_weekday}, {start_date} {start_month} - {end_date} {end_month} {start_year}"
+    else:
+        return f"{start_weekday} - {end_weekday}, {start_date} - {end_date} {start_month} {start_year}"
