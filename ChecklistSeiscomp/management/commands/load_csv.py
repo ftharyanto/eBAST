@@ -2,7 +2,7 @@ from csv import DictReader
 from django.core.management import BaseCommand
 
 # Import the model 
-from ChecklistSeiscomp.models import OperatorModel
+from ChecklistSeiscomp.models import StationListModel
 
 
 ALREDY_LOADED_ERROR_MESSAGE = """
@@ -19,7 +19,7 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
     
         # Show this if the data already exist in the database
-        if OperatorModel.objects.exists():
+        if StationListModel.objects.exists():
             print('csv data already loaded...exiting.')
             print(ALREDY_LOADED_ERROR_MESSAGE)
             return
@@ -29,6 +29,8 @@ class Command(BaseCommand):
 
 
         #Code to load the data into database
-        for row in DictReader(open('./operator.csv')):
-            data=OperatorModel(name=row['name'])  
+        for row in DictReader(open('./station_list.csv')):
+            data=StationListModel(kode=row['kode'],
+                                  stasiun=row['stasiun'],
+                                  tipe=row['tipe'])  
             data.save()

@@ -21,5 +21,6 @@ app_name = 'ChecklistSeiscomp'
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', views.create_view),
     path('checklist-seiscomp/', include('ChecklistSeiscomp.urls')),
 ]
