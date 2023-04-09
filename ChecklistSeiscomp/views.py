@@ -196,7 +196,6 @@ def export_pdf_instant(request):
 
 
 def date_range_to_string(date_range):
-    from datetime import date
     import locale
     
     weekdays = ['Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu', 'Minggu']
@@ -240,3 +239,19 @@ def station_list_delete(request, id):
     ob = StationListModel.objects.get(id=id)
     ob.delete()
     return HttpResponseRedirect("/checklist-seiscomp/station_list_view")
+
+
+def statistic_view(request):
+    from django.shortcuts import render
+    from plotly.offline import plot
+    from plotly.graph_objs import Scatter
+
+    x_data = [0,1,2,3]
+    y_data = [x**2 for x in x_data]
+    fig = [Scatter(x=x_data, y=y_data,
+                        mode='lines', name='test',
+                        opacity=0.8, marker_color='green')]
+    plot_div = plot(fig,
+               output_type='div', include_plotlyjs=False, show_link=False
+               )
+    return render(request, "statistic_view.html", context={'plot_div': plot_div})

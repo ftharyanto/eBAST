@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load materializecss %}
+
+{% block custom_css %}
+<script src="https://cdn.plot.ly/plotly-2.20.0.min.js"></script>
+{% endblock custom_css %}
+
+{% block content %}
+<div class="container">
+
+    {{ plot_div|safe }}
+</div>
+{% endblock content %}
+
+{% block javascript %}
+{% endblock javascript %}
