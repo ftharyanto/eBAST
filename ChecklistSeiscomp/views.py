@@ -5,8 +5,8 @@ from django.shortcuts import (get_object_or_404,
 import openpyxl
 
 # relative import of forms
-from .models import ChecklistSeiscompModel, OperatorModel
-from .forms import InputForm, OperatorForm
+from .models import ChecklistSeiscompModel, OperatorModel, StationListModel
+from .forms import InputForm, OperatorForm, StationListForm
 
 
 def create_view(request):
@@ -216,3 +216,27 @@ def date_range_to_string(date_range):
         return f"{start_weekday} - {end_weekday}, {start_date} {start_month} - {end_date} {end_month} {start_year}"
     else:
         return f"{start_weekday} - {end_weekday}, {start_date} - {end_date} {start_month} {start_year}"
+
+def station_list_view(request):
+    # dictionary for initial data with
+    # field names as keys
+    context = {}
+
+    # add the dictionary during initialization
+    context["station_list"] = StationListModel.objects.all()
+
+    add_station_list_form = StationListForm(request.POST or None)
+    if add_station_list_form.is_valid():
+        add_station_list_form.save()
+
+        # Resetting the form after it has been submitted.
+        add_station_list_form = StationListForm()
+
+    context['add_station_list_form'] = add_station_list_form
+
+    return render(request, "station_list_view.html", context)        
+
+def station_list_delete(request, id):
+    ob = StationListModel.objects.get(id=id)
+    ob.delete()
+    return HttpResponseRedirect("/checklist-seiscomp/station_list_view")

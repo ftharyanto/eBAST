@@ -1,6 +1,5 @@
 from django import forms
-from .models import ChecklistSeiscompModel, OperatorModel
-from django.utils.formats import date_format
+from .models import ChecklistSeiscompModel, OperatorModel, StationListModel
 
 # creating a form
 class InputForm(forms.ModelForm):
@@ -64,4 +63,23 @@ class OperatorForm(forms.ModelForm):
         }
         labels = {
             'name': ('Nama'),
+        }
+
+class StationListForm(forms.ModelForm):
+    # create meta class
+    class Meta:
+        # specify model to be used
+        model = StationListModel
+
+        # specify fields to be used
+        fields = '__all__'
+        widgets = {
+            'kode': forms.TextInput(attrs={'placeholder': 'Kode Stasiun'}),
+            'lokasi': forms.TextInput(attrs={'placeholder': 'Lokasi Stasiun'}),
+            'tipe': forms.TextInput(attrs={'placeholder': 'Garansi atau Nongaransi'}),
+        }
+        labels = {
+            'kode': ('Kode'),
+            'stasiun': ('Lokasi Stasiun'),
+            'tipe': ('Tipe Stasiun'),
         }

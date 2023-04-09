@@ -36,6 +36,7 @@
                     <li {% if request.resolver_match.url_name == 'home' %}class="active"{% endif %}><a href="{% url 'ChecklistSeiscomp:home' %}">Input Data</a></li>
                     <li {% if request.resolver_match.url_name == 'list_view' %}class="active"{% endif %}><a href="{% url 'ChecklistSeiscomp:list_view' %}">Inventory</a></li>
                     <li {% if request.resolver_match.url_name == 'operator_view' %}class="active"{% endif %}><a href="{% url 'ChecklistSeiscomp:operator_view' %}">Operator</a></li>
+                    <li {% if request.resolver_match.url_name == 'station_list_view' %}class="active"{% endif %}><a href="{% url 'ChecklistSeiscomp:station_list_view' %}">Station List</a></li>
                 </ul>
             </div>
         </div>
@@ -45,6 +46,7 @@
         <li {% if request.resolver_match.url_name == 'home' %}class="active"{% endif %}><a href="{% url 'ChecklistSeiscomp:home' %}">Input Data</a></li>
         <li {% if request.resolver_match.url_name == 'list_view' %}class="active"{% endif %}><a href="{% url 'ChecklistSeiscomp:list_view' %}">Inventory</a></li>
         <li {% if request.resolver_match.url_name == 'operator_view' %}class="active"{% endif %}><a href="{% url 'ChecklistSeiscomp:operator_view' %}">Operator</a></li>
+        <li {% if request.resolver_match.url_name == 'station_list_view' %}class="active"{% endif %}><a href="{% url 'ChecklistSeiscomp:station_list_view' %}">Station List</a></li>
         <li><div class="divider"></div></li>
         <li><a href="https://github.com/ftharyanto/eBAST" target="_blank" class="down"><i class="fa-brands fa-github"></i> Source Code</a></li>
     </ul>

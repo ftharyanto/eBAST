@@ -59,7 +59,7 @@ class OperatorModel(models.Model):
     
 class StationListModel(models.Model):
     kode = models.CharField(max_length=10)
-    stasiun = models.CharField(max_length=200)
+    lokasi = models.CharField(max_length=200)
     tipe = models.CharField(max_length=50)
 
     def __str__(self):
