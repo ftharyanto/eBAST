@@ -244,15 +244,56 @@ def station_list_delete(request, id):
 def statistic_view(request):
     from django.db.models import Q
     from plotly.offline import plot
-    from plotly.graph_objs import Bar
+    import plotly.graph_objs as go
+    from datetime import datetime
+    import ast
 
     x_data = list(ChecklistSeiscompModel.objects.filter(Q(jam='12:00 WIB')).values_list('tanggal', flat=True))
-    y_data = list(ChecklistSeiscompModel.objects.filter(Q(jam='12:00 WIB')).values_list('slmon', flat=True))
+    x_datetime = []
+    for x in x_data:
+        x = datetime.strptime(x.strftime('%Y-%m-%d')+' 12:00', '%Y-%m-%d %H:%M')
+        x_datetime.append(x)
 
-    fig = [Bar(x=x_data, y=y_data,
-                        name='test',
-                        opacity=0.8, marker_color='green')]
-    plot_div = plot(fig,
+    y_slmon_12 = list(ChecklistSeiscompModel.objects.filter(Q(jam='12:00 WIB')).values_list('slmon', flat=True))
+    # y_slmon_0 = list(ChecklistSeiscompModel.objects.filter(Q(jam='00:00 WIB')).values_list('slmon', flat=True))
+    y_blanks_12 = list(ChecklistSeiscompModel.objects.filter(Q(jam='12:00 WIB')).values_list('blanks', flat=True))
+    # y_blanks_0 = list(ChecklistSeiscompModel.objects.filter(Q(jam='00:00 WIB')).values_list('blanks', flat=True))
+    y_blanks_12_len = []
+
+    for y in y_blanks_12:
+        if y:
+            y = len(ast.literal_eval(y))
+            y_blanks_12_len.append(y)
+        else:
+            y_blanks_12_len.append(0)
+
+
+    layout12=go.Layout(title="Grafik Slmon vs Blank Pukul 12:00 WIB", xaxis={'title':'Waktu'}, yaxis={'title':'Jumlah'})
+
+    fig12 = go.Figure(data=[
+            go.Bar(x=x_datetime, y=y_slmon_12,
+                name='slmon 12:00 WIB',
+                opacity=0.8, marker_color='red'),
+            go.Bar(x=x_datetime, y=y_blanks_12_len,
+                name='blanks 12:00 WIB',
+                opacity=0.8, marker_color='blue'),
+            ],
+            layout=layout12)
+    
+    jam12 = plot(fig12,
                output_type='div', include_plotlyjs=False, show_link=False
                )
-    return render(request, "statistic_view.html", context={'plot_div': plot_div})
+    layout00=go.Layout(title="Grafik Slmon vs Blank Pukul 00:00 WIB", xaxis={'title':'Waktu'}, yaxis={'title':'Jumlah'})
+    
+    fig00 = go.Figure(data=[
+        go.Bar(x=x_datetime, y=y_slmon_12,
+            name='slmon 12:00 WIB',
+            opacity=0.8, marker_color='red'),
+        ],
+        layout=layout00)
+    
+    jam00 = plot(fig00,
+               output_type='div', include_plotlyjs=False, show_link=False
+               )
+    context = {'jam12': jam12, 'jam00': jam00, 'x': x}
+    return render(request, "statistic_view.html", context=context)

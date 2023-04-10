@@ -1,4 +1,5 @@
 from django.db import models
+from datetime import datetime
 
 # Create your models here.
 KELOMPOK = (
@@ -53,10 +54,6 @@ class ChecklistSeiscompModel(models.Model):
         if self.blanks:
             self.blanks = self.blanks.upper()
             self.blanks = remove_accelerograph(self.blanks.split())
-
-        # if self.tanggal:
-        #     if self.jam == '12:00 WIB':
-        #         self.tanggal = 
 
         super().save(*args, **kwargs)
 
