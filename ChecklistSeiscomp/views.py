@@ -242,7 +242,6 @@ def station_list_delete(request, id):
 
 
 def statistic_view(request):
-    from django.shortcuts import render
     from plotly.offline import plot
     from plotly.graph_objs import Scatter
 
