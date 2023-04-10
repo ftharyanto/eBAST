@@ -1,2 +1,4 @@
+django
 django-materializecss-form
 plotly
+openpyxl

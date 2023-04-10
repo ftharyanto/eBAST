@@ -54,6 +54,10 @@ class ChecklistSeiscompModel(models.Model):
             self.blanks = self.blanks.upper()
             self.blanks = remove_accelerograph(self.blanks.split())
 
+        # if self.tanggal:
+        #     if self.jam == '12:00 WIB':
+        #         self.tanggal = 
+
         super().save(*args, **kwargs)
 
     def __str__(self):

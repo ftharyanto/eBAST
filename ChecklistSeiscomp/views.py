@@ -242,13 +242,15 @@ def station_list_delete(request, id):
 
 
 def statistic_view(request):
+    from django.db.models import Q
     from plotly.offline import plot
-    from plotly.graph_objs import Scatter
+    from plotly.graph_objs import Bar
 
-    x_data = [0,1,2,3]
-    y_data = [x**2 for x in x_data]
-    fig = [Scatter(x=x_data, y=y_data,
-                        mode='lines', name='test',
+    x_data = list(ChecklistSeiscompModel.objects.filter(Q(jam='12:00 WIB')).values_list('tanggal', flat=True))
+    y_data = list(ChecklistSeiscompModel.objects.filter(Q(jam='12:00 WIB')).values_list('slmon', flat=True))
+
+    fig = [Bar(x=x_data, y=y_data,
+                        name='test',
                         opacity=0.8, marker_color='green')]
     plot_div = plot(fig,
                output_type='div', include_plotlyjs=False, show_link=False
