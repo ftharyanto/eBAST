@@ -7,17 +7,152 @@
 {% endblock custom_css %}
 
 {% block content %}
+
+<div class="row">
+
+    <div class="col s12 m4">
+        <div class="card small">
+            <div class="card-content">
+                <h5 class="center">Tabel Kondisi Stasiun<br />{{ last_data }}</h5>
+                <table class="highlight">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Gaps</th>
+                            <th>Spikes</th>
+                            <th>Blanks</th>
+                            <th>Slmon</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>Total</th>
+                            <td>{{last_gaps}}</td>
+                            <td>{{last_spikes}}</td>
+                            <td>{{last_blanks}}</td>
+                            <td>{{ last_slmon }}</td>
+                        </tr>
+                        <tr>
+                            <th>Total (%)</th>
+                            <td><b>{{ percent_gaps }}</b></td>
+                            <td><b>{{ percent_spikes }}</b></td>
+                            <td><b>{{ percent_blanks }}</b></td>
+                            <td><b>{{ percent_slmon }}</b></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="col s12 m8">
+        <div class="card small">
+            <div class="card-content">
+            </div>
+        </div>
+    </div>
+
+    <div class="col s12 m4">
+        <div class="card small">
+            <div class="card-content">
+            </div>
+        </div>
+    </div>
+
+    <div class="col s12 m4">
+        <div class="card small">
+            <div class="card-content">
+
+                <div class="row">
+                    <div class="input-field col s12">
+                        <select id="date_range">
+                            <option value="" disabled selected>Pilih tanggal</option>
+                            <option value="7days">Last 7 days</option>
+                            <option value="30days">Last 30 days</option>
+                            <option value="custom">Custom</option>
+                        </select>
+                        <label for="date_range">Rentang Tanggal</label>
+                    </div>
+                    <div class="input-field col s6 hide" id="start_date_div">
+                        <input type="text" class="datepicker" id="start_date">
+                        <label for="start_date">Start Date</label>
+                    </div>
+                    <div class="input-field col s6 hide" id="end_date_div">
+                        <input type="text" class="datepicker" id="end_date">
+                        <label for="end_date">End Date</label>
+                    </div>
+                </div>
+
+                <h5>Grafik Jumlah Stasiun Off</h5>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="col s12 m4">
+        <div class="card small">
+            <div class="card-content">
+                {{ last_spikes }}
+                {{ last_slmon }}
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- <div class="row">
+    <div class="col s12 m4">
+        <div class="card medium">
+            <div class="card-content">
+                {{ jam00|safe }}
+            </div>
+        </div>
+    </div>
+</div> -->
+<!-- 
 <div class="container">
     <div class="row">
         <div class="col m6">
             {{ jam12|safe }}
         </div>
-        <div class="col m6">
-            {{ jam00|safe }}
-        </div>
     </div>
-</div>
+</div> -->
 {% endblock content %}
 
 {% block javascript %}
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var elems = document.querySelectorAll('select');
+        M.FormSelect.init(elems);
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+        var elems = document.querySelectorAll('.datepicker');
+        var instances = M.Datepicker.init(elems, {
+            format: 'yyyy-mm-dd',
+            autoClose: true,
+            showClearBtn: true,
+            onSelect: function (date) {
+                if (this.id === 'start_date') {
+                    var endDate = new Date(date);
+                    endDate.setDate(endDate.getDate() + 7);
+                    $('#end_date').datepicker('setDate', endDate);
+                }
+            }
+        });
+
+        var dateRangeSelect = document.getElementById('date_range');
+        dateRangeSelect.addEventListener('change', function () {
+            var startDateDiv = document.getElementById('start_date_div');
+            var endDateDiv = document.getElementById('end_date_div');
+
+            if (this.value === 'custom') {
+                startDateDiv.classList.remove('hide');
+                endDateDiv.classList.remove('hide');
+            } else {
+                startDateDiv.classList.add('hide');
+                endDateDiv.classList.add('hide');
+            }
+        });
+    });
+</script>
 {% endblock javascript %}

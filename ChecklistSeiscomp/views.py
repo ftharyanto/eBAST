@@ -248,6 +248,9 @@ def statistic_view(request):
     from datetime import datetime
     import ast
 
+    station_count = StationListModel.objects.count()
+    last_data = ChecklistSeiscompModel.objects.all().last()
+
     x_data = list(ChecklistSeiscompModel.objects.filter(Q(jam='12:00 WIB')).values_list('tanggal', flat=True))
     x_datetime = []
     for x in x_data:
@@ -295,5 +298,39 @@ def statistic_view(request):
     jam00 = plot(fig00,
                output_type='div', include_plotlyjs=False, show_link=False
                )
-    context = {'jam12': jam12, 'jam00': jam00, 'x': x}
+    
+    # percentage of on and off of last record
+    last_record = ChecklistSeiscompModel.objects.order_by('-tanggal')[:1]
+    last_slmon = last_record.values('slmon')[0]['slmon'] or 0
+    last_blanks = last_record.values('blanks')[0]['blanks']
+    if last_blanks:
+        last_blanks = len(ast.literal_eval(last_blanks))
+    else:
+        last_blanks = 0
+    
+    last_gaps = last_record.values('gaps')[0]['gaps']
+    if last_gaps:
+        last_gaps = len(ast.literal_eval(last_gaps))
+    else:
+        last_gaps = 0
+    
+    last_spikes = last_record.values('spikes')[0]['spikes']
+    if last_spikes:
+        last_spikes = len(ast.literal_eval(last_spikes))
+    else:
+        last_spikes = 0
+    
+    context = {'jam12': jam12,
+               'jam00': jam00,
+               'last_gaps': last_gaps,
+               'last_spikes': last_spikes,
+               'last_blanks': last_blanks,
+               'last_slmon': last_slmon,
+               'percent_gaps': round(last_gaps / station_count * 100, 2),
+               'percent_spikes': round(last_spikes / station_count * 100, 2),
+               'percent_blanks': round(last_blanks / station_count * 100, 2),
+               'percent_slmon': round(last_slmon / station_count * 100, 2),
+               'last_data': last_data
+               }
+    
     return render(request, "statistic_view.html", context=context)
