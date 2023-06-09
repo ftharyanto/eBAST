@@ -48,13 +48,17 @@
 
     <br><br>
     <h4>Data terakhir</h4>
-    <a style="display: none;" class="waves-effect waves-light btn red darken-1" href="/"><i
+    <a style="" class="waves-effect waves-light btn red darken-1"
+        onclick="window.location.href='{% url 'ChecklistSeiscomp:export_pdf_instant' %}'"><i
             class="material-icons left">picture_as_pdf</i>Buat
         Laporan PDF</a>
     <a class="waves-effect waves-light btn green darken-1"
-        onclick="window.location.href='{% url 'ChecklistSeiscomp:export_excel_instant' %}'"><i class="fa-solid fa-file-excel"
-            style="padding-right: 1rem;"></i>Buat Laporan
+        onclick="window.location.href='{% url 'ChecklistSeiscomp:export_excel_instant' %}'"><i
+            class="fa-solid fa-file-excel" style="padding-right: 1rem;"></i>Buat Laporan
         Excel</a>
+    <a class="waves-effect waves-light btn blue darken-1"
+        onclick="window.location.href='{% url 'ChecklistSeiscomp:send_to_gcp_ss' %}'"><i
+            class="fa-solid fa-file-excel" style="padding-right: 1rem;"></i>Kirim ke GCP</a>
     <table>
         <tr>
             <th>Tanggal</th>

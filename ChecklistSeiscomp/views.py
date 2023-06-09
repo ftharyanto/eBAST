@@ -121,6 +121,66 @@ def edit_operator_name(request, id):
 
     return render(request, "operator_view.html", context)
 
+def send_to_gcp_ss(request):
+    import requests, ast
+
+    url = 'https://script.google.com/macros/s/AKfycbxPVOb8TVUbu8q8c23d4jEJdTDEJZLp9me8Z7rkv0pbQ0m7jcNhcC6jwgt2bNfEe_vTmA/exec'
+    data = ChecklistSeiscompModel.objects.all().order_by('-tanggal')[:2]
+
+    data1 = {}
+    if data[1].gaps:
+        data1['gaps'] = ast.literal_eval(data[1].gaps)
+    else:
+        data1['gaps'] = []
+
+    if data[1].spikes:
+        data1['spikes'] = ast.literal_eval(data[1].spikes)
+    else:
+        data1['spikes'] = []
+
+    if data[1].blanks:
+        data1['blanks'] = ast.literal_eval(data[1].blanks)
+    else:
+        data1['blanks'] = []    
+
+    data2 = {}
+    if data[0].gaps:
+        data2['gaps'] = ast.literal_eval(data[0].gaps)
+    else:
+        data2['gaps'] = []    
+
+    if data[0].spikes:
+        data2['spikes'] = ast.literal_eval(data[0].spikes)
+    else:
+        data2['spikes'] = [] 
+
+    if data[0].blanks:
+        data2['blanks'] = ast.literal_eval(data[0].blanks)
+    else:
+        data2['blanks'] = [] 
+
+    all_data = {
+        'kelompok': data[0].kelompok,
+        'operator1': data[0].operator,
+        'operator2': data[1].operator,
+        'tanggal': date_range_to_string([data[1].tanggal, data[0].tanggal]),
+        'data1': {
+            'gaps': data1['gaps'],
+            'spikes': data1['spikes'],
+            'blanks': data1['blanks'],
+        },
+        'data2': {
+            'gaps': data2['gaps'],
+            'spikes': data2['spikes'],
+            'blanks': data2['blanks'],
+        },
+    }
+    
+    response = requests.post(url, json=all_data)
+    print(response.text)
+    print(all_data)
+    return HttpResponseRedirect("/checklist-seiscomp/create_view")
+
 
 def export_excel_instant(request):
     """This function is used to export excel file containing last 2 records"""
@@ -186,13 +246,37 @@ def export_excel_instant(request):
 
 
 def export_pdf_instant(request):
-  from django.http import FileResponse
-  
-  file = open('path/to/your/pdf/file.pdf', 'rb')
-  response = FileResponse(file)
-  response['Content-Type'] = 'application/pdf'
-  response['Content-Disposition'] = 'inline; filename="file.pdf"'
-  return response
+    from django.conf import settings
+    from io import BytesIO
+    from reportlab.pdfgen import canvas
+    from reportlab.lib.pagesizes import letter
+    from openpyxl import load_workbook
+
+    def convert_to_pdf(file_path):
+        wb = load_workbook(filename=file_path)
+        ws = wb.active
+
+        buffer = BytesIO()
+        c = canvas.Canvas(buffer, pagesize=letter)
+
+        for row in ws.iter_rows():
+            for cell in row:
+                c.drawString(100, 100, str(cell.value))
+
+        c.save()
+
+        buffer.seek(0)
+        return buffer
+    
+    static_folder = str(settings.STATIC_ROOT) + '/ChecklistSeiscomp/'
+    file_path = static_folder + 'template.xlsx'
+
+    buffer = convert_to_pdf(file_path)
+
+    response = HttpResponse(buffer.read(), content_type='application/pdf')
+    response['Content-Disposition'] = 'attachment; filename="file.pdf"'
+
+    return response
 
 
 def date_range_to_string(date_range):
