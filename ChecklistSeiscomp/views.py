@@ -302,8 +302,11 @@ def date_range_to_string(date_range):
 
 def station_list_view(request):
     # dictionary for initial data with
-    # field names as keys
     context = {}
+
+    # get count of garansi and nongaransi
+    garansi_count = StationListModel.objects.filter(tipe='garansi').values_list('tipe', flat=True).count()
+    nongaransi_count = StationListModel.objects.filter(tipe='nongaransi').values_list('tipe', flat=True).count()
 
     # add the dictionary during initialization
     context["station_list"] = StationListModel.objects.all()
@@ -316,6 +319,8 @@ def station_list_view(request):
         add_station_list_form = StationListForm()
 
     context['add_station_list_form'] = add_station_list_form
+    context['garansi_count'] = garansi_count
+    context['nongaransi_count'] = nongaransi_count
 
     return render(request, "station_list_view.html", context)        
 
