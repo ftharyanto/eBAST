@@ -1,0 +1,7 @@
+.rounded-rectangle {
+    display: inline-block;
+    border-radius: 10px;
+    border: 2px solid #76bb06;
+    padding: 5px 15px;
+    color: #76bb06;
+  }  

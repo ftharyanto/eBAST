@@ -10,10 +10,13 @@
 
 <div class="row">
 
-    <div class="col s12 m4">
-        <div class="card small">
+    <div class="col s12 m6">
+        <div class="card large">
             <div class="card-content">
-                <h5 class="center">Tabel Kondisi Stasiun<br />{{ last_data }}</h5>
+                <div class="rounded-rectangle">Data Terakhir</div>
+                <h6 class="center">
+                    Tabel Kondisi Stasiun<br /> <b>{{ last_data }}</b>
+                </h6>
                 <table class="highlight">
                     <thead>
                         <tr>
@@ -21,7 +24,7 @@
                             <th>Gaps</th>
                             <th>Spikes</th>
                             <th>Blanks</th>
-                            <th>Slmon</th>
+                            <th>Blank<br>(Slmon)</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -45,22 +48,26 @@
         </div>
     </div>
 
-    <div class="col s12 m8">
-        <div class="card small">
+    <div class="col s12 m6">
+        <div class="card large">
             <div class="card-content">
+                <div class="rounded-rectangle">Semua Data</div>
+                {{ jam00|safe }}
+            </div>
+        </div>
+    </div>
+
+    <div class="col s12 m6">
+        <div class="card large">
+            <div class="card-content">
+                <div class="rounded-rectangle">Semua Data</div>
+                {{ jam12|safe }}
             </div>
         </div>
     </div>
 
     <div class="col s12 m4">
-        <div class="card small">
-            <div class="card-content">
-            </div>
-        </div>
-    </div>
-
-    <div class="col s12 m4">
-        <div class="card small">
+        <div class="card large">
             <div class="card-content">
 
                 <div class="row">
@@ -90,7 +97,7 @@
     </div>
 
     <div class="col s12 m4">
-        <div class="card small">
+        <div class="card large">
             <div class="card-content">
                 {{ last_spikes }}
                 {{ last_slmon }}
@@ -99,7 +106,7 @@
     </div>
 </div>
 
-<!-- <div class="row">
+<div class="row">
     <div class="col s12 m4">
         <div class="card medium">
             <div class="card-content">
@@ -107,15 +114,15 @@
             </div>
         </div>
     </div>
-</div> -->
-<!-- 
+</div>
+
 <div class="container">
     <div class="row">
         <div class="col m6">
             {{ jam12|safe }}
         </div>
     </div>
-</div> -->
+</div>
 {% endblock content %}
 
 {% block javascript %}

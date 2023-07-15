@@ -340,21 +340,21 @@ def statistic_view(request):
     station_count = StationListModel.objects.count()
     last_data = ChecklistSeiscompModel.objects.all().last()
 
+    # define x-axis as date time of 12:00 WIB
     x_data = list(ChecklistSeiscompModel.objects.filter(Q(jam='12:00 WIB')).values_list('tanggal', flat=True))
     x_datetime = []
     for x in x_data:
         x = datetime.strptime(x.strftime('%Y-%m-%d')+' 12:00', '%Y-%m-%d %H:%M')
         x_datetime.append(x)
 
+    # graphic of visual monitoring vs slmon 12:00 WIB
     y_slmon_12 = list(ChecklistSeiscompModel.objects.filter(Q(jam='12:00 WIB')).values_list('slmon', flat=True))
-    # y_slmon_0 = list(ChecklistSeiscompModel.objects.filter(Q(jam='00:00 WIB')).values_list('slmon', flat=True))
     y_blanks_12 = list(ChecklistSeiscompModel.objects.filter(Q(jam='12:00 WIB')).values_list('blanks', flat=True))
-    # y_blanks_0 = list(ChecklistSeiscompModel.objects.filter(Q(jam='00:00 WIB')).values_list('blanks', flat=True))
+    
     y_blanks_12_len = []
-
-    for y in y_blanks_12:
-        if y:
-            y = len(ast.literal_eval(y))
+    for data in y_blanks_12:
+        if data:
+            y = len(ast.literal_eval(data))
             y_blanks_12_len.append(y)
         else:
             y_blanks_12_len.append(0)
@@ -363,10 +363,10 @@ def statistic_view(request):
     layout12=go.Layout(title="Grafik Slmon vs Blank Pukul 12:00 WIB", xaxis={'title':'Waktu'}, yaxis={'title':'Jumlah'})
 
     fig12 = go.Figure(data=[
-            go.Bar(x=x_datetime, y=y_slmon_12,
+            go.Line(x=x_datetime, y=y_slmon_12,
                 name='slmon 12:00 WIB',
                 opacity=0.8, marker_color='red'),
-            go.Bar(x=x_datetime, y=y_blanks_12_len,
+            go.Line(x=x_datetime, y=y_blanks_12_len,
                 name='blanks 12:00 WIB',
                 opacity=0.8, marker_color='blue'),
             ],
@@ -375,14 +375,37 @@ def statistic_view(request):
     jam12 = plot(fig12,
                output_type='div', include_plotlyjs=False, show_link=False
                )
+    
+    # define x-axis as date time of 12:00 WIB
+    x_data = list(ChecklistSeiscompModel.objects.filter(Q(jam='12:00 WIB')).values_list('tanggal', flat=True))
+    x_datetime = []
+    for x in x_data:
+        x = datetime.strptime(x.strftime('%Y-%m-%d')+' 00:00', '%Y-%m-%d %H:%M')
+        x_datetime.append(x)
+
+    # graphic of visual monitoring vs slmon 00:00 WIB
+    y_slmon_00 = list(ChecklistSeiscompModel.objects.filter(Q(jam='00:00 WIB')).values_list('slmon', flat=True))
+    y_blanks_00 = list(ChecklistSeiscompModel.objects.filter(Q(jam='00:00 WIB')).values_list('blanks', flat=True))
+
     layout00=go.Layout(title="Grafik Slmon vs Blank Pukul 00:00 WIB", xaxis={'title':'Waktu'}, yaxis={'title':'Jumlah'})
     
+    y_blanks_00_len = []
+    for data in y_blanks_00:
+        if data:
+            y = len(ast.literal_eval(data))
+            y_blanks_00_len.append(y)
+        else:
+            y_blanks_00_len.append(0)
+
     fig00 = go.Figure(data=[
-        go.Bar(x=x_datetime, y=y_slmon_12,
-            name='slmon 12:00 WIB',
-            opacity=0.8, marker_color='red'),
-        ],
-        layout=layout00)
+            go.Line(x=x_datetime, y=y_slmon_00,
+                name='slmon 00:00 WIB',
+                opacity=0.8, marker_color='red'),
+            go.Line(x=x_datetime, y=y_blanks_00_len,
+                name='blanks 00:00 WIB',
+                opacity=0.8, marker_color='blue'),
+            ],
+            layout=layout00)
     
     jam00 = plot(fig00,
                output_type='div', include_plotlyjs=False, show_link=False
