@@ -360,7 +360,7 @@ def statistic_view(request):
             y_blanks_12_len.append(0)
 
 
-    layout12=go.Layout(title="Grafik Slmon vs Blank Pukul 12:00 WIB", xaxis={'title':'Waktu'}, yaxis={'title':'Jumlah'})
+    layout12=go.Layout(title="Grafik Slmon vs Visual Monitoring Pukul 12:00 WIB", title_x=0.5, xaxis={'title':'Waktu'}, yaxis={'title':'Jumlah'})
 
     fig12 = go.Figure(data=[
             go.Line(x=x_datetime, y=y_slmon_12,
@@ -387,7 +387,7 @@ def statistic_view(request):
     y_slmon_00 = list(ChecklistSeiscompModel.objects.filter(Q(jam='00:00 WIB')).values_list('slmon', flat=True))
     y_blanks_00 = list(ChecklistSeiscompModel.objects.filter(Q(jam='00:00 WIB')).values_list('blanks', flat=True))
 
-    layout00=go.Layout(title="Grafik Slmon vs Blank Pukul 00:00 WIB", xaxis={'title':'Waktu'}, yaxis={'title':'Jumlah'})
+    layout00=go.Layout(title="Grafik Slmon vs Visual Monitoring Pukul 00:00 WIB", title_x=0.5, xaxis={'title':'Waktu'}, yaxis={'title':'Jumlah'})
     
     y_blanks_00_len = []
     for data in y_blanks_00:

@@ -8,15 +8,15 @@
 
 {% block content %}
 
-<div class="row">
+<div class="container">
+    <div class="row">
 
-    <div class="col s12 m12 l6">
-        <div class="card large">
-            <div class="card-content">
+        <div class="col s12">
+            <div class="card-custom">
                 <div class="rounded-rectangle">Data Terakhir</div>
-                <h6 class="center">
+                <h5 class="center">
                     Tabel Kondisi Stasiun<br /> <b>{{ last_data }}</b>
-                </h6>
+                </h5>
                 <table class="highlight">
                     <thead>
                         <tr>
@@ -46,83 +46,86 @@
                 </table>
             </div>
         </div>
-    </div>
 
-    <div class="col s12 m12 l6">
-        <div class="card large">
-            <div class="card-content">
+        <div class="col s12">
+            <div class="card-custom">
                 <div class="rounded-rectangle">Semua Data</div>
                 {{ jam00|safe }}
             </div>
         </div>
+
+        <div class="col s12">
+            <div class="card-custom">
+                <div class="rounded-rectangle">Semua Data</div>
+                <div class="row">
+                    <div class="input-field col s1">
+                        <input value="2">
+                        <span>hari terakhir</span>
+                    </div>
+                </div>
+                {{ jam12|safe }}
+            </div>
+        </div>
+
+        <div class="col s12 m4">
+            <div class="card large">
+                <div class="card-content">
+
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <select id="date_range">
+                                <option value="" disabled selected>Pilih tanggal</option>
+                                <option value="7days">Last 7 days</option>
+                                <option value="30days">Last 30 days</option>
+                                <option value="custom">Custom</option>
+                            </select>
+                            <label for="date_range">Rentang Tanggal</label>
+                        </div>
+                        <div class="input-field col s6 hide" id="start_date_div">
+                            <input type="text" class="datepicker" id="start_date">
+                            <label for="start_date">Start Date</label>
+                        </div>
+                        <div class="input-field col s6 hide" id="end_date_div">
+                            <input type="text" class="datepicker" id="end_date">
+                            <label for="end_date">End Date</label>
+                        </div>
+                    </div>
+
+                    <h5>Grafik Jumlah Stasiun Off</h5>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col s12 m4">
+            <div class="card large">
+                <div class="card-content">
+                    {{ last_spikes }}
+                    {{ last_slmon }}
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div class="col s12 m12 l6">
-        <div class="card large">
-            <div class="card-content">
-                <div class="rounded-rectangle">Semua Data</div>
+    <div class="row">
+        <div class="col s12 m4">
+            <div class="card medium">
+                <div class="card-content">
+                    {{ jam00|safe }}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col m6">
                 {{ jam12|safe }}
             </div>
         </div>
     </div>
-
-    <div class="col s12 m4">
-        <div class="card large">
-            <div class="card-content">
-
-                <div class="row">
-                    <div class="input-field col s12">
-                        <select id="date_range">
-                            <option value="" disabled selected>Pilih tanggal</option>
-                            <option value="7days">Last 7 days</option>
-                            <option value="30days">Last 30 days</option>
-                            <option value="custom">Custom</option>
-                        </select>
-                        <label for="date_range">Rentang Tanggal</label>
-                    </div>
-                    <div class="input-field col s6 hide" id="start_date_div">
-                        <input type="text" class="datepicker" id="start_date">
-                        <label for="start_date">Start Date</label>
-                    </div>
-                    <div class="input-field col s6 hide" id="end_date_div">
-                        <input type="text" class="datepicker" id="end_date">
-                        <label for="end_date">End Date</label>
-                    </div>
-                </div>
-
-                <h5>Grafik Jumlah Stasiun Off</h5>
-
-            </div>
-        </div>
-    </div>
-
-    <div class="col s12 m4">
-        <div class="card large">
-            <div class="card-content">
-                {{ last_spikes }}
-                {{ last_slmon }}
-            </div>
-        </div>
-    </div>
 </div>
 
-<div class="row">
-    <div class="col s12 m4">
-        <div class="card medium">
-            <div class="card-content">
-                {{ jam00|safe }}
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="container">
-    <div class="row">
-        <div class="col m6">
-            {{ jam12|safe }}
-        </div>
-    </div>
-</div>
 {% endblock content %}
 
 {% block javascript %}

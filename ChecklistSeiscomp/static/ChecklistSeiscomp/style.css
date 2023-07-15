@@ -1,7 +1,25 @@
 .rounded-rectangle {
-    display: inline-block;
-    border-radius: 10px;
-    border: 2px solid #76bb06;
-    padding: 5px 15px;
-    color: #76bb06;
-  }  
+  display: inline-block;
+  border-radius: 10px;
+  border: 2px solid #76bb06;
+  padding: 5px 15px;
+  color: #76bb06;
+}
+
+.card-custom {
+  margin: 0.5rem;
+  padding: 4rem 8rem;
+  border: 1.5px solid #76bb06;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+.card-custom .content {
+  text-align: center;
+  margin: 10px;
+}
+
+.card-custom .content img {
+  width: 100%;
+}
