@@ -376,41 +376,43 @@ def statistic_view(request):
                output_type='div', include_plotlyjs=False, show_link=False
                )
     
-    # define x-axis as date time of 12:00 WIB
-    x_data = list(ChecklistSeiscompModel.objects.filter(Q(jam='12:00 WIB')).values_list('tanggal', flat=True))
-    x_datetime = []
-    for x in x_data:
-        x = datetime.strptime(x.strftime('%Y-%m-%d')+' 00:00', '%Y-%m-%d %H:%M')
-        x_datetime.append(x)
+    # # define x-axis as date time of 12:00 WIB
+    # x_data = list(ChecklistSeiscompModel.objects.filter(Q(jam='12:00 WIB')).values_list('tanggal', flat=True))
+    # x_datetime = []
+    # for x in x_data:
+    #     x = datetime.strptime(x.strftime('%Y-%m-%d')+' 00:00', '%Y-%m-%d %H:%M')
+    #     x_datetime.append(x)
 
-    # graphic of visual monitoring vs slmon 00:00 WIB
-    y_slmon_00 = list(ChecklistSeiscompModel.objects.filter(Q(jam='00:00 WIB')).values_list('slmon', flat=True))
-    y_blanks_00 = list(ChecklistSeiscompModel.objects.filter(Q(jam='00:00 WIB')).values_list('blanks', flat=True))
+    # # graphic of visual monitoring vs slmon 00:00 WIB
+    # y_slmon_00 = list(ChecklistSeiscompModel.objects.filter(Q(jam='00:00 WIB')).values_list('slmon', flat=True))
+    # y_blanks_00 = list(ChecklistSeiscompModel.objects.filter(Q(jam='00:00 WIB')).values_list('blanks', flat=True))
 
-    layout00=go.Layout(title="Grafik Slmon vs Visual Monitoring Pukul 00:00 WIB", title_x=0.5, xaxis={'title':'Waktu'}, yaxis={'title':'Jumlah'})
+    # layout00=go.Layout(title="Grafik Slmon vs Visual Monitoring Pukul 00:00 WIB", title_x=0.5, xaxis={'title':'Waktu'}, yaxis={'title':'Jumlah'})
     
-    y_blanks_00_len = []
-    for data in y_blanks_00:
-        if data:
-            y = len(ast.literal_eval(data))
-            y_blanks_00_len.append(y)
-        else:
-            y_blanks_00_len.append(0)
+    # y_blanks_00_len = []
+    # for data in y_blanks_00:
+    #     if data:
+    #         y = len(ast.literal_eval(data))
+    #         y_blanks_00_len.append(y)
+    #     else:
+    #         y_blanks_00_len.append(0)
 
-    fig00 = go.Figure(data=[
-            go.Line(x=x_datetime, y=y_slmon_00,
-                name='slmon 00:00 WIB',
-                opacity=0.8, marker_color='red'),
-            go.Line(x=x_datetime, y=y_blanks_00_len,
-                name='blanks 00:00 WIB',
-                opacity=0.8, marker_color='blue'),
-            ],
-            layout=layout00)
+    # fig00 = go.Figure(data=[
+    #         go.Line(x=x_datetime, y=y_slmon_00,
+    #             name='slmon 00:00 WIB',
+    #             opacity=0.8, marker_color='red'),
+    #         go.Line(x=x_datetime, y=y_blanks_00_len,
+    #             name='blanks 00:00 WIB',
+    #             opacity=0.8, marker_color='blue'),
+    #         ],
+    #         layout=layout00)
     
-    jam00 = plot(fig00,
-               output_type='div', include_plotlyjs=False, show_link=False
-               )
+    # jam00 = plot(fig00,
+    #            output_type='div', include_plotlyjs=False, show_link=False
+    #            )
     
+    jam00 = plot_slmon_vm(days = 100)
+
     # percentage of on and off of last record
     last_record = ChecklistSeiscompModel.objects.order_by('-tanggal')[:1]
     last_slmon = last_record.values('slmon')[0]['slmon'] or 0
@@ -446,3 +448,61 @@ def statistic_view(request):
                }
     
     return render(request, "statistic_view.html", context=context)
+
+def get_last_x_days_of_data(model, time, days: int, col: str):
+    """Gets the last x days of data from the database."""
+    from django.db.models import Q
+    import datetime
+
+    today = datetime.date.today()
+    x_days_ago = today - datetime.timedelta(days=days)
+    print(x_days_ago)
+    result = list(model.objects.filter(
+      tanggal__gte=x_days_ago, tanggal__lte=today).filter(
+          Q(jam=time)).values_list(col, flat=True)) 
+    print(result)
+    return result
+
+
+def plot_slmon_vm(days, time='00:00 WIB'):
+    from django.db.models import Q
+    from plotly.offline import plot
+    import plotly.graph_objs as go
+    from datetime import datetime
+    import ast
+    
+    x_data = get_last_x_days_of_data(ChecklistSeiscompModel, time, days, 'tanggal')
+    print(x_data)
+    x_datetime = []
+    for x in x_data:
+        x = datetime.strptime(x.strftime('%Y-%m-%d')+' 00:00', '%Y-%m-%d %H:%M')
+        x_datetime.append(x)
+
+    # graphic of visual monitoring vs slmon 00:00 WIB
+    y_slmon_00 = get_last_x_days_of_data(ChecklistSeiscompModel, time, days, 'slmon')
+    y_blanks_00 = get_last_x_days_of_data(ChecklistSeiscompModel, time, days, 'blanks')
+
+    layout00=go.Layout(title="Grafik Slmon vs Visual Monitoring Pukul 00:00 WIB", title_x=0.5, xaxis={'title':'Waktu'}, yaxis={'title':'Jumlah'})
+    
+    y_blanks_00_len = []
+    for data in y_blanks_00:
+        if data:
+            y = len(ast.literal_eval(data))
+            y_blanks_00_len.append(y)
+        else:
+            y_blanks_00_len.append(0)
+
+    fig00 = go.Figure(data=[
+            go.Line(x=x_datetime, y=y_slmon_00,
+                name='slmon 00:00 WIB',
+                opacity=0.8, marker_color='red'),
+            go.Line(x=x_datetime, y=y_blanks_00_len,
+                name='blanks 00:00 WIB',
+                opacity=0.8, marker_color='blue'),
+            ],
+            layout=layout00)
+    
+    jam00 = plot(fig00,
+               output_type='div', include_plotlyjs=False, show_link=False
+               )
+    return jam00

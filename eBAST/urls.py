@@ -16,11 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from ChecklistSeiscomp import views
+from accounts import views as views_account
 
 app_name = 'ChecklistSeiscomp'
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.create_view),
     path('checklist-seiscomp/', include('ChecklistSeiscomp.urls')),
+    path('', include('accounts.urls')),
 ]
