@@ -15,29 +15,29 @@ class InputForm(forms.ModelForm):
         fields = '__all__'
 
         widgets = {
-            'gaps': forms.TextInput(attrs={
+            'gaps': forms.Textarea(attrs={
                 'class': 'tooltipped',
                 'data-position': 'bottom',
-                'data-tooltip': 'shift+scroll untuk scrolling secara horizontal',
-                'placeholder': 'ABCD EFGH IJKL MNOP QRST UVWX YZZZ',
+                'data-tooltip': 'masukan kode stasiun yang mengalami gap, pisahkan dengan baris baru (enter)',
+                'placeholder': 'contoh: ABCD',
             }),
-            'spikes': forms.TextInput(attrs={
+            'spikes': forms.Textarea(attrs={
                 'class': 'tooltipped',
                 'data-position': 'bottom',
-                'data-tooltip': 'shift+scroll untuk scrolling secara horizontal',
-                'placeholder': 'ABCD EFGH IJKL MNOP QRST UVWX YZZZ',
+                'data-tooltip': 'masukan kode stasiun yang mengalami spike, pisahkan dengan baris baru (enter)',
+                'placeholder': 'contoh: ABCD',
             }),
-            'blanks': forms.TextInput(attrs={
+            'blanks': forms.Textarea(attrs={
                 'class': 'tooltipped',
                 'data-position': 'bottom',
-                'data-tooltip': 'shift+scroll untuk scrolling secara horizontal',
-                'placeholder': 'ABCD EFGH IJKL MNOP QRST UVWX YZZZ',
+                'data-tooltip': 'masukan kode stasiun yang mengalami blank, pisahkan dengan baris baru (enter)',
+                'placeholder': 'contoh: ABCD',
             }),
             'slmon': forms.NumberInput(attrs={
                 'class': 'tooltipped',
                 'data-position': 'bottom',
-                'data-tooltip': 'shift+scroll untuk scrolling secara horizontal',
-                'placeholder': 'Jumlah sensor yang delay lebih dari 30 menit. Contoh: 30',
+                'data-tooltip': 'Jumlah sensor yang delay lebih dari 30 menit',
+                'placeholder': 'Contoh: 30',
             }),
             'tanggal': forms.TextInput(attrs={
                 'class': 'datepicker',
@@ -55,14 +55,14 @@ class OperatorForm(forms.ModelForm):
         model = OperatorModel
 
         # specify fields to be used
-        fields = [
-            'name',
-        ]
+        fields = '__all__'
         widgets = {
             'name': forms.TextInput(attrs={'placeholder': 'Nama'}),
+            'nip': forms.TextInput(attrs={'placeholder': 'NIP'}),
         }
         labels = {
             'name': ('Nama'),
+            'nip': ('NIP'),
         }
 
 class StationListForm(forms.ModelForm):

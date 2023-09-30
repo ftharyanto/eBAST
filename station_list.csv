@@ -1,413 +1,496 @@
-kode,stasiun,tipe,,,,
-ACBM,"Ayyu, Ciparay, Jawa Barat",nongaransi,,,,
-ALTI,"Alor Timur, Nusa",nongaransi,,,,
-AAFM,"Alor Selatan, Alor, NTT",nongaransi,,,,
-AAI,"Ambon, Maluku",nongaransi,,,,
-AAII,"Ambon, Maluku (CEA)",nongaransi,,,,
-ABJI,"Asem Bagus, Situbondo,",nongaransi,,,,
-ABSM,"Argamakmur, Bengkulu",nongaransi,,,,
-ACJM,"Astanajapura, Jawa Barat",nongaransi,,,,
-ALKI,"Alor, Kep. Alor,",nongaransi,,,,
-AMPM,"Aifat, Maybrat Papua Barat",nongaransi,,,,
-APSI,"Ampana, Sulawesi Tengah",nongaransi,,,,
-ARMI,"Aru, Maluku",nongaransi,,,,
-ARPI,"Arso, Papua Barat",nongaransi,,,,
-ATNI,"Atambua, Kab. Belu,",nongaransi,,,,
-BAJI,"Socah, Jawa Timur",nongaransi,,,,
-BAKI,"Biak, Papua",nongaransi,,,,
-BASI,"Baing, Waingapu, P",nongaransi,,,,
-BATI,"Baumata, NTT (AS045)",nongaransi,,,,
-BBBCM,"Bonto Bahari, Bulukumba, SulSel",nongaransi,,,,
-BBCI,"Biau, Sulawesi Tengah",nongaransi,,,,
-BBCM,"Bontocani, Sulawesi Selatan",nongaransi,,,,
-BBJI,"Bungbulang, Garut, Jawa",nongaransi,,,,
-BBJM,"Bubulan, Jawa Timur",nongaransi,,,,
-BBSI,"Bau Bau, Kotamadya",nongaransi,,,,
-BDBI,"Badung, Bali",nongaransi,,,,
-BDCM,"Banawa Selatan, Sulawesi",nongaransi,,,,
-BESI,"Bukit, Aceh",nongaransi,,,,
-BESM,"Beutong, Aceh",nongaransi,,,,
-BGCI,"Balantak, Sulawesi Tengah",nongaransi,,,,
-BGCM,"Balaesang, Sulawesi Tengah",nongaransi,,,,
-BHCM,"Bahodopi, Sulawesi Tengah",nongaransi,,,,
-BKB,"Balikpapan, Kalimantan selatan",nongaransi,,,,
-BKJI,"Banjar, Jawa Barat",nongaransi,,,,
-BKNI,"Bangkinang, Riau",nongaransi,,,,
-BKSI,"Bulukumba, Kab. Bulukumba,",nongaransi,,,,
-BLCM,"Balaesang Tanjung, Sulawesi",nongaransi,,,,
-BLJI,"Banyuglugur,Jawa Timur",nongaransi,,,,
-BLSM,"Batukuning Lakitan Ulu,",nongaransi,,,,
-BMBNG,"Terdani, Kudus",nongaransi,,,,
-BMSI,"Bangko, Jambi",nongaransi,,,,
-BNDI,"Bandaneira, P Banda,",nongaransi,,,,
-BNSI,"Bone,Sulawesi Selatan",nongaransi,,,,
-BNTI,"Bajawa, Nusa Tenggara",nongaransi,,,,
-BOJI,"Sawit, Jawa Tengah",nongaransi,,,,
-BOSM,"Banding Agung, Sumatra",nongaransi,,,,
-BPMJM,"Batumarmar, Pamekasan JaTim",nongaransi,,,,
-BPSM,"Bayang, Sumatra Barat",nongaransi,,,,
-BSI,"Banda Aceh, Nanggro",nongaransi,,,,
-BSMI,"Bula, Seram, Maluku",nongaransi,,,,
-BSSI,"Benteng, P. Selayar,",nongaransi,,,,
-BTCM,"Bungku Tengah, Sulawesi",nongaransi,,,,
-BTJI,"Bumi Jawa, Jawa",nongaransi,,,,
-BUJI,"Buayan, Jawa Tengah",nongaransi,,,,
-BUKI,"Berau, Kalimantan Timur",nongaransi,,,,
-BUSI,"Bandar Baru, Aceh",nongaransi,,,,
-BWJI,"Bawean, Jawa Timur",nongaransi,,,,
-BYJI,"Banyuwangi, Jawa Timur",nongaransi,,,,
-BYLI,"Bayan, Nusa Tenggara",nongaransi,,,,
-CASI,"Calang, Aceh",nongaransi,,,,
-CBJI,"Citeko, Bogor, Jawa",nongaransi,,,,
-CBJM,"Cipongkor, Jawa Barat",nongaransi,,,,
-CCJM,"Campaka, Jawa Barat",nongaransi,,,,
-CGJI,"Cigeulis Pandeglang, Banten",nongaransi,,,,
-CIJI,"Cipedes, Jawa Barat",nongaransi,,,,
-CIJM,"Cikedung, Jawa Barat",nongaransi,,,,
-CMJI,"Cimerak,Jawa Barat",nongaransi,,,,
-CNJI,"Cianjur,Jawa Barat",nongaransi,,,,
-CSJI,"Ciracap, Jawa Barat",nongaransi,,,,
-CSJM,"Congeang, Jawa Barat",nongaransi,,,,
-CTJI,"Cacaban, Tegal,Jawa Tengah",nongaransi,,,,
-CWJM,"Cikalong Wetan, Jawa",nongaransi,,,,
-DBJI,"Dermaga,Jawabarat",nongaransi,,,,
-DBKI,"Dusun Selatan, Kalimantan",nongaransi,,,,
-DBNFM,"Donggo, Bima, NTB",nongaransi,,,,
-DDSI,"Dumai Timur, Riau",nongaransi,,,,
-DNP,"Denpasar,Bali",nongaransi,,,,
-DOCM,"Donggala, Sulawesi Tengah",nongaransi,,,,
-DYPI,"Dekai, Papua Barat",nongaransi,,,,
-EDFI,"Ende, Flores,Nusa Tenggara",nongaransi,,,,
-EGSI,"Enggano, Bengkulu",nongaransi,,,,
-ESNI,"Empang, Sumbawa, Nusat Tenggara",nongaransi,,,,
-ERPI,"Enaratoli, Papua",nongaransi,,,,
-FAKI,"Fak-Fak, Papua Barat",nongaransi,,,,
-FKMPM,"Kurik, Merauke, Papua",nongaransi,,,,
-GBJI,"Gringsing, Jawa Tengah",nongaransi,,,,
-GEJI,"Gedangan, Jawa Timur",nongaransi,,,,
-GENI,"Genyem, Jayapura, Papua",nongaransi,,,,
-GESM,"Geumpang, Aceh",nongaransi,,,,
-GGJM,"Gabus, Jawa Tengah",nongaransi,,,,
-GHMI,"Gane Barat, Maluku",nongaransi,,,,
-GKJM,"Gedangsari, Yogyakarta",nongaransi,,,,
-GMJI,"Gumukmas,Jawa Timur",nongaransi,,,,
-GPSM,"Geumpang, Aceh",nongaransi,,,,
-GRJI,"Gresik, Jawa Timur",nongaransi,,,,
-GSI,"Gunung Sitoli, Nias,",nongaransi,,,,
-GTJI,"Gemawang, Jawa Tengah",nongaransi,,,,
-GTOI,"Gorontalo, Sulawesi (CEA)",nongaransi,,,,
-GTSI,"Gunung Toar, Riau",nongaransi,,,,
-GUJM,"Gubug, Jawa Tengah",nongaransi,,,,
-IATSM,"Idi, Aceh Timur, Aceh",nongaransi,,,,
-IBTI,"Ile Boleng, Nusa",nongaransi,,,,
-IGBI,"Ingas, Denpasar, Bali",nongaransi,,,,
-IHMI,"Ibu, Maluku Utara",nongaransi,,,,
-IHRSI,"Indragiri Hilir, Riau, Sumatera",nongaransi,,,,
-IWPI,"Rasiei, Papua Barat",nongaransi,,,,
-JAGI,"Jajag Banyuwangi, Jawa",nongaransi,,,,
-JASI,"Sangir Balai Janggo,",nongaransi,,,,
-JAY,"Jayapura, Papua (AS041)",nongaransi,,,,
-JBJI,"Jasinga, Jawa Barat",nongaransi,,,,
-JBJM,"Jepon, Jawa Tengah",nongaransi,,,,
-JCJI,"Jatiwangi, Cirebon,Jawa Barat",nongaransi,,,,
-JHMI,"Jailolo, Maluku Utara",nongaransi,,,,
-JMSI,"Jangkat, Jambi",nongaransi,,,,
-JPJI,"Jatiluhur, Jawa Barat",nongaransi,,,,
-JPSI,"Jurai, Sulawesi Barat",nongaransi,,,,
-JSBFM,"Jereweh, Sumbawa Barat, NTB",nongaransi,,,,
-JTJM,"Jampang Tengah, Jawa",nongaransi,,,,
-JWJM,"Juwangi, Jawa Tengah",nongaransi,,,,
-KAPI,"Kappang, Sulawesi Selatan",nongaransi,,,,
-KBBI,"Kintamani, Bali",nongaransi,,,,
-KBJM,"Kunduran, Jawa Tengah",nongaransi,,,,
-KBKI,"Kotabaru, Kalimantan Selatan",nongaransi,,,,
-KDI,"Kendari, Sulawesi Tenggara",nongaransi,,,,
-KGCM,"Kwandang, Gorontalo",nongaransi,,,,
-KHK,"Kahang-kahang, Karang Asem,",nongaransi,,,,
-KJCM,"Kelara, Kab. Jeneponto, SulSel",nongaransi,,,,
-KKKI,"Kendawangan, Kalimantan Barat",nongaransi,,,,
-KKMI,"Kei Kecil, Maluku",nongaransi,,,,
-KKSI,"Kolaka, Sulawesi Tenggara",nongaransi,,,,
-KLI,"Kotabumi, Lampung Utara,",nongaransi,,,,
-KLJI,"Klakah, Jawa Timur",nongaransi,,,,
-KLNI,"Mataram, Nusa Tenggara",nongaransi,,,,
-KLSI,"Kotabumi, Lampung (CEA)",nongaransi,,,,
-KLSM,"Kluet Utara, Aceh",nongaransi,,,,
-KMBFM,"Kuwus, Manggarai Barat, NTT",nongaransi,,,,
-KMMI,"Kalianget, Jawa Timur",nongaransi,,,,
-KMNI,"Mataram, Nusa Tenggara Barat",nongaransi,,,,
-KMPI,"Kaimana, Kaimana Papua",nongaransi,,,,
-KMSI,"Kotamubago, Sulawesi Utara",nongaransi,,,,
-KPJI,"Karang Pucung,Cilacap.Jawa Tengah",nongaransi,,,,
-KPJM,"Kapas, Jawa Timur",nongaransi,,,,
-KRAI,"Kai Ratu, Maluku",nongaransi,,,,
-KRJI,"Kerinci, Jambi",nongaransi,,,,
-KRSI,"Karossa, Sulawesi Barat",nongaransi,,,,
-KSI,"Kepahiyang, Bengkulu, Sumatera",nongaransi,,,,
-KTMI,"Kormomolin, Maluku",nongaransi,,,,
-KTTI,"Kolbano, Nusa Tenggara",nongaransi,,,,
-KUKI,"Kutai Barat, Kalimantan Timur",nongaransi,,,,
-KUSI,"Kluet Utara, Aceh",nongaransi,,,,
-KWJI,"Kertek, Jawa Tengah",nongaransi,,,,
-LASI,"Langsa, Aceh",nongaransi,,,,
-LBFI,"Labuhan Bajo, NTT",nongaransi,,,,
-LBNFM,"Lambu, Bima, NTB",nongaransi,,,,
-LDSI,"Laurambong, Sumatera Utara",nongaransi,,,,
-LEM,"Lembang-Bandung, Jawa Barat",nongaransi,,,,
-LESM,"Lemong, Lampung",nongaransi,,,,
-LHMI,"Lhokseumawe, Aceh",nongaransi,,,,
-LHSM,"Semendo, Sumatra Selatan",nongaransi,,,,
-LISM,"Lingge Isaq, Aceh",nongaransi,,,,
-LJPI,"Lereh, Papua Barat",nongaransi,,,,
-LKCI,"Pakue, Sulawesi Tenggara",nongaransi,,,,
-LKSM,"Suliki, Sumatra Barat",nongaransi,,,,
-LKUCM,"Langgikima, Konawe, Sulawesi",nongaransi,,,,
-LLSI,"Lubuk Linggau Barat,",nongaransi,,,,
-LLSM,"Limau, Lampung",nongaransi,,,,
-LMNI,"Lembata, NTT (CEA)",nongaransi,,,,
-LMTI,"Langke Rembong, Nusa",nongaransi,,,,
-LOCM,"Lore Tengah, Sulawesi",nongaransi,,,,
-LPCM,"Lembang, Sulawesi Selatan",nongaransi,,,,
-LPSM,"Lengayang, Sumatra Barat",nongaransi,,,,
-LRTI,"Larantuka, Nusa Tenggara",nongaransi,,,,
-LSCM,"Lalabati Rilau, Sulawesi",nongaransi,,,,
-LSNI,"Lunyuk, Sumbawa, Nusat Tenggara",nongaransi,,,,
-LTNI,"Lombok Timur, Nusa Tenggara",nongaransi,,,,
-LTSM,"Lumut, Sumatra Utara",nongaransi,,,,
-LUCM,"Lore Utara, Sulawesi",nongaransi,,,,
-LUJI,"Lumbang, Jawa Timur",nongaransi,,,,
-LUWI,"Luwuk, sulawesi tenggah",nongaransi,,,,
-MASM,"Masjid Raya, Aceh",nongaransi,,,,
-MBBI,"Muara Bungo, Jambi",nongaransi,,,,
-MBJI,"Bawang, Majelengka, Banjarnegara,",nongaransi,,,,
-MBPI,"Manimeri, Papua Barat",nongaransi,,,,
-MBSM,"Marga Sakti Seblat,",nongaransi,,,,
-MDSI,"Muara Dua, Sumatera",nongaransi,,,,
-MGAI,"Melonguane, Kep. Talud,",nongaransi,,,,
-MIPI,"Mimika Baru, Papua",nongaransi,,,,
-MKBI,Muko-Muko Bengkulu Indonesia,nongaransi,,,,
-MKJM,"Manisrenggo, Jawa Tengah",nongaransi,,,,
-MKSM,"Muara Sahung, Bengkulu",nongaransi,,,,
-MLJI,"Malang, Karangkates, Jawa",nongaransi,,,,
-MLJM,"Mantup, Jawa Timur",nongaransi,,,,
-MMCI,"Mamasa, Sulawesi Barat",nongaransi,,,,
-MMRI,"Maumere, Nusa Tengagara",nongaransi,,,,
-MMSI,"Mamuju, Sulawesi Barat",nongaransi,,,,
-MNAI,"Manna, Bengkulu",nongaransi,,,,
-MNI,"Manado, Sulawesi Utara,",nongaransi,,,,
-MNSI,"Mandailing Natal,Sumatera Utara",nongaransi,,,,
-MPSI,"Mapaga,Donggola, Sulawesi Tengah",nongaransi,,,,
-MPSM,"Mapat Tunggul, Sumatra",nongaransi,,,,
-MRSI,"Marissa,Gorontalo, Sulawesi Utara",nongaransi,,,,
-MSAI,"Masohi, Maluku",nongaransi,,,,
-MSCM,"Masamba, Sulawesi Selatan",nongaransi,,,,
-MTAI,"Morotai, maluku utara",nongaransi,,,,
-MTCM,"Malili, Sulawesi Selatan",nongaransi,,,,
-MTKI,"Muara Teweh, Kalimantan",nongaransi,,,,
-MTSI,"Manduamas, Sumatra Utara",nongaransi,,,,
-MTSM,"Muara Dua, Sumatra",nongaransi,,,,
-MWPI,"Manokwari, Papua Barat",nongaransi,,,,
-NBMI,"Namrole, Maluku",nongaransi,,,,
-NBPI,"Nabire, Papua",nongaransi,,,,
-NGJI,"Ngawi, Jawa Timur",nongaransi,,,,
-NJBM,"Negara, Jembrana, Bali",nongaransi,,,,
-NKBI,"Nusa Penida, Bali",nongaransi,,,,
-NKKI,"Nangan Tayap, Kalimantan",nongaransi,,,,
-NSBMM,"Seram Barat, Maluku",nongaransi,,,,
-OBMI,"Pulau OBI, Maluku",nongaransi,,,,
-OMBFM,"Komodo, Manggarai Barat, NTT",nongaransi,,,,
-ONSM,"Onan Ganjang, Sumatra",nongaransi,,,,
-PABI,"Pasaman, Sumatra Barat",nongaransi,,,,
-PAKI,"Paser, Kalimantan Timur",nongaransi,,,,
-PAFM,"Pantar tengah, Alor, NTT",nongaransi,,,,
-PBCI,"Bolang-Uki, Sulawesi Utara",nongaransi,,,,
-PBJI,"Pasirjambu, Jawa Barat",nongaransi,,,,
-PBKI,"Pangkalan Bun, Kalimantan",nongaransi,,,,
-PBLI,"Pujut, Nusa Tenggara",nongaransi,,,,
-PBSI,"Pulau Batu, Sumatra",nongaransi,,,,
-PBNI,"Parado, Bima, Nusa Tenggara",nongaransi,,,,
-PCI,"Palu, Sulawesi Tengah",nongaransi,,,,
-PCJI,"Pacitan, Jawa Timur",nongaransi,,,,
-PCJM,"Pabuaran, Jawa Barat",nongaransi,,,,
-PDLI,"Pekat, Nusa Tenggara",nongaransi,,,,
-PDSI,"Unand Padang, Sumatra",nongaransi,,,,
-PGJM,"Panggang, Yogyakarta",nongaransi,,,,
-PICM,"Parigi Utara, Sulawesi",nongaransi,,,,
-PKCI,"Lainea, Sulawesi Tenggara",nongaransi,,,,
-PKJI,"Paninggaran, Jawa Tengah",nongaransi,,,,
-PKJM,"Pasawahan, Jawa Barat",nongaransi,,,,
-PKSI,"Pagar Alam Utara,",nongaransi,,,,
-PLAI,"Plampang, Nusa Tenggara",nongaransi,,,,
-PLJI,"Plosoklaten, Jawa Timur",nongaransi,,,,
-PLSI,"Pangkalan Koto Baru,",nongaransi,,,,
-PLSM,"Sosa, Sumatra Utara",nongaransi,,,,
-PMBI,"Palembang, Sumatera Selatan",nongaransi,,,,
-PMCI,"Pasangkayu, Sulawesi Barat",nongaransi,,,,
-PMMI,"Pulau Makian, Maluku",nongaransi,,,,
-PMSI,"Paralitang, Majene, Sulawesi",nongaransi,,,,
-POCI,"Poso Pesisir, Sulawesi",nongaransi,,,,
-PPCM,"Patampanua, Sulawesi Selatan",nongaransi,,,,
-PPI,"Kota Padangpanjang, Sumatera",nongaransi,,,,
-PPJI,"Prigen, Pasuruan, Jawa",nongaransi,,,,
-PPLI,"Punduh Pedada, Lampung",nongaransi,,,,
-PPSI,"Pulau Pagai, Sumatra",nongaransi,,,,
-PPSM,"Pesisir Selatan, Lampung",nongaransi,,,,
-PRJI,"Pracimantoro, Jawa Tengah",nongaransi,,,,
-PRSI,"Pelalawan, Riau, Sumatera",nongaransi,,,,
-PSI,"Parapat, Sumatera Utara",nongaransi,,,,
-PSJCM,"Pasimansunggu, Selayar, SulSel",nongaransi,,,,
-PSJM,"Pelabuhan Ratu, Jawa",nongaransi,,,,
-PSLI,"Rajabasa P. Sibesi,",nongaransi,,,,
-PSSI,"Pulau Siau, Sulawesi",nongaransi,,,,
-PSSM,"Pematang Sawah, Lampung",nongaransi,,,,
-PTJI,"Pondok Aren, Banten",nongaransi,,,,
-PTSM,"Pangaribuan, Sulawesi Utara",nongaransi,,,,
-PWCM,"Pitumpanua, Wajo, SulSel",nongaransi,,,,
-PWJI,"Pagerwojo, Jawa Timur",nongaransi,,,,
-RASM,Ranah Ampek Hulu,nongaransi,,,,
-RDCM,"Rio Pakava, Sulawesi",nongaransi,,,,
-RGRI,"Rengat, Riau",nongaransi,,,,
-RHRSI,"Rokan-hilir, Riau",nongaransi,,,,
-RKCM,"Rauta, Konawe, Sulawesi",nongaransi,,,,
-RKPI,"Ransiki, Papua Barat",nongaransi,,,,
-RLSI,"Rantau Selatan, Sulawesi",nongaransi,,,,
-RMSM,"Rawas Hulu,, Sumatra",nongaransi,,,,
-RNFM,"Riung, Ngada, NTT",nongaransi,,,,
-RONI,"Rote, NTT (CEA)",nongaransi,,,,
-RRSI,"Rambah, Riau",nongaransi,,,,
-RSSM,"Ronggurnihuta, Sumatra Utara",nongaransi,,,,
-RTBI,"Rangdo, Tabanan, Negara,",nongaransi,,,,
-RSNI,"Ropang, Sumbawa, Nusa Tennggara",nongaransi,,,,
-SANI,"Sanana, Maluku Utara",nongaransi,,,,
-SASI,"Simpang Empat, Sumut",nongaransi,,,,
-SASM,"Sampoiniet, Aceh",nongaransi,,,,
-SAUI,"Saumlaki, Maluku",nongaransi,,,,
-SBBM,"Seririt, Buleleng, Bali",nongaransi,,,,
-SBJI,"Serang, Banten",nongaransi,,,,
-SBJM,"Sanden, Yogyakarta",nongaransi,,,,
-SBNI,"Sabu, Nusa Tenggara",nongaransi,,,,
-SBSM,"Sungai Beremas, Sumatra",nongaransi,,,,
-SCJI,"Srandil Cilacap, Jawa",nongaransi,,,,
-SCJM,"Sukaluyu, Jawa Barat",nongaransi,,,,
-SDCI,"Sindue, Sulawesi Tengah",nongaransi,,,,
-SDSI,"Sungai Dareh, Sumatra",nongaransi,,,,
-SDSM,"Sidikalang, Sumatra Utara",nongaransi,,,,
-SEJI,"Senori, Jawa Timur",nongaransi,,,,
-SEMI,Seram Utara Timur,nongaransi,,,,
-SGKI,"Sangata, Kalimantan Timur",nongaransi,,,,
-SGSI,"Sangihe, Sulawesi Utara",nongaransi,,,,
-SIJI,"Sorong, Papua Barat",nongaransi,,,,
-SIJM,"Sidoarjo, Jawa Timur",nongaransi,,,,
-SIRSI,"Siak, Riau, Sumatra",nongaransi,,,,
-SISM,"Silih Nara, Aceh",nongaransi,,,,
-SJPM,"Sentani, Jayapura, Papua",nongaransi,,,,
-SKJI,"Sukabumi, Jawa Barat",nongaransi,,,,
-SKPM,"Senggi, Keerom, Papua",nongaransi,,,,
-SKSI,"Sukakarya, Aceh",nongaransi,,,,
-SKSM,"Siulak Mukai, Jambi",nongaransi,,,,
-SLBFM,"Sekotong Tengah, Lombok, NTB",nongaransi,,,,
-SLSI,"Sarolangun, Jambi",nongaransi,,,,
-SLSM,"Sungai Lasi, Sumatra",nongaransi,,,,
-SMKI,"Samarinda, Kalimantan Timur",nongaransi,,,,
-SMPI,"Sarmi, Papua",nongaransi,,,,
-SMRI,"Semarang, Jawa Tengah",nongaransi,,,,
-SMSI,"Sumalata, Gorontalo",nongaransi,,,,
-SMSM,"Simpati, Sumatra Barat",nongaransi,,,,
-SNBI,"Sirombu, Sulawesi Utara",nongaransi,,,,
-SNJI,"Sawahan, Nganjuk, Jawa",nongaransi,,,,
-SNSI,"Sinabang, NAD",nongaransi,,,,
-SOEI,"Soei, Kab. Timor",nongaransi,,,,
-SPSI,"Sidrap Palu, Sulawesi",nongaransi,,,,
-SPSJM,"Serang Panjang, Subang, JaBar",nongaransi,,,,
-SPSM,Sitellu Tali Urang,nongaransi,,,,
-SRBI,"Singaraja, Bali",nongaransi,,,,
-SRMI,"Seram Utara, Maluku",nongaransi,,,,
-SRPI,"Serui, Papua",nongaransi,,,,
-SRSI,"Sorowako, Sulawesi Selatan",nongaransi,,,,
-SSJM,"Sukaraja, Jawa Barat",nongaransi,,,,
-SSKI,"Singkawang, Kalimantan Barat",nongaransi,,,,
-SSMI,Siritaun Wida Timur,nongaransi,,,,
-SSSI,"Subulussalam, Aceh",nongaransi,,,,
-SSSM,"Sangir, Sumatra Barat",nongaransi,,,,
-STSI,"Silaut, Sulawesi Barat",nongaransi,,,,
-SUSM,"Sekincau, Lampung",nongaransi,,,,
-SWCM,"Sabbang Paru, Sulawesi",nongaransi,,,,
-SWI,"Sorong, Papua Barat",nongaransi,,,,
-SWJI,"Sawahan, Jawa Timur",nongaransi,,,,
-SWPM,"Sidey, Manokwari Papua Barat",nongaransi,,,,
-SYJI,"Sleman, Yogyakarta",nongaransi,,,,
-TAMI,"Teluk Ambon, Maluku",nongaransi,,,,
-TARAI,"Tarakan, Kalimantan Timur",nongaransi,,,,
-TASI,"Tanjung Raya, Sumatra",nongaransi,,,,
-TBCM,"Tonra, Sulawesi Selatan",nongaransi,,,,
-TBJI,"Tambakboyo, Jawa Timur",nongaransi,,,,
-TBKI,"Teluk Bayur, Kalimantan",nongaransi,,,,
-TBMCM,"Bolaang Mongondow, Sulawesi Utara",nongaransi,,,,
-TDNI,"Teluk Dalam, Nias,",nongaransi,,,,
-TGCM,"Telaga, Gorontalo",nongaransi,,,,
-TKSM,"Tiganderket, Sumatra Utara",nongaransi,,,,
-TLCM,"Tomoni, Sulawesi Selatan",nongaransi,,,,
-TLE2,"Tual2, Maluku",nongaransi,,,,
-TMSI,"Tondano, Sulawesi Utara",nongaransi,,,,
-TMSM,"Teramang Jaya, Bengkulu",nongaransi,,,,
-TMTMM,"Tehoru, Maluku Tengah, Maluku",nongaransi,,,,
-TNG,"Tangerang, Banten",nongaransi,,,,
-TNGI,"Tangerang, Banten (CEA)",nongaransi,,,,
-TNTI,"Ternate, Maluku Utara",nongaransi,,,,
-TOCM,"Towuti, Sulawesi Selatan",nongaransi,,,,
-TOJI,"Tomo, Jawa Barat",nongaransi,,,,
-TOLI2,"Toli-Toli, Sulawesi Tengah",nongaransi,,,,
-TPCI,"Taopa, Sulawesi Tengah",nongaransi,,,,
-TPI,"Tanjung Pandan, Bangka",nongaransi,,,,
-TPRI,"Tanjung Pinang, Kepulauan",nongaransi,,,,
-TPSI,"Tangse, Aceh",nongaransi,,,,
-TPTI,"Tapaktuan, Aceh (CEA)",nongaransi,,,,
-TRIYO,"Sipora Selatan, SumBar",nongaransi,,,,
-TRPI,"Tanah Merah, Papua",nongaransi,,,,
-TSI,"Tuntungan, Sumatra Utara",nongaransi,,,,
-TSJM,"Tanjungsiang, Jawa Barat",nongaransi,,,,
-TSPI,"Teminabuan, Papua Barat",nongaransi,,,,
-TTSI,"Tana Toraja, Sulawesi",nongaransi,,,,
-TTSM,"Tano Tombangan Angkola,",nongaransi,,,,
-TUJI,"Tumpakrejo, Jawa Timur",nongaransi,,,,
-UGM,"Wanagama, Yogyakarta",nongaransi,,,,
-UKCM,"Unaaha, Konawe, Sulawesi",nongaransi,,,,
-ULSM,"Ulu Musi, Sumatra",nongaransi,,,,
-USFM,"Utan, Sumbawa, NTB",nongaransi,,,,
-USTI,"Umbu Ratu Nggay,",nongaransi,,,,
-UTSI,"Ulu Belu, Lampung",nongaransi,,,,
-UTSM,"Ulu Talo, Bengkulu",nongaransi,,,,
-UWJI,"Ujung Watu, Jawa",nongaransi,,,,
-WAMI,"Wamena, Papua",nongaransi,,,,
-WBMI,"Weda Barat, Maluku",nongaransi,,,,
-TSNI,"Tarano, Nusa Tenggara Barat",nongaransi,,,,
-WBNI,"Wera, Bima, Nusa Tenggara",nongaransi,,,,
-WBSI,"Waikabubak, NTT",nongaransi,,,,
-WEFM,"Wewaria, Ende, NTT",nongaransi,,,,
-WFTFM,"Wulnggitang, Flores Timur, NTT",nongaransi,,,,
-WGJM,"Wringianom, Jawa Timur",nongaransi,,,,
-WHMI,"Wasile, Maluku Utara",nongaransi,,,,
-WKCM,"Wolo, Kolaka, Sulawesi",nongaransi,,,,
-WLFM,"Omesuri, Lembata, NTT",nongaransi,,,,
-WLJI,"Wonosalam, Banten",nongaransi,,,,
-WLTFM,"Wanasaba, Lombok Timur, NTB",nongaransi,,,,
-WMCM,"Wita Ponda, Sulawesi",nongaransi,,,,
-WOJI,"Wonogiri, D.I. Yogyakarta",nongaransi,,,,
-WRJI,"Curahdami, Jawa Timur",nongaransi,,,,
-WSI,"Waingapu, Nusa Tenggara",nongaransi,,,,
-WSJM,"Warungkiara, Jawa Barat",nongaransi,,,,
-WSTMM,"Werinama, Seram Timur, Maluku",nongaransi,,,,
-WUPCM,"Wara Utara, alopo, SulSel",nongaransi,,,,
-WWCI,"Wangi-wangi, Sulawesi Tenggara",nongaransi,,,,
-WWPI,"Waropen Bawah, Papua",nongaransi,,,,
-YOGI,Yogyakarta (CEA),nongaransi,,,,
-BBLSI,"Banggai, Sulawesi Tengah",garansi,,,,
-BUMSI,"Bungku Utara, Sulawesi Tengah",garansi,,,,
-KASAI,"Kotabaharu, Aceh",garansi,,,,
-KKKKI,"Katingan, Kalimantan Tengah",garansi,,,,
-KKTKI,"Kombeng, Kalimantan Timur",garansi,,,,
-PBMSI,"Poigar, Sulawesi Utara",garansi,,,,
-PRLJI,"Pasiran, Lumajang",garansi,,,,
-RHRRI,"Rokan Hilir, Riau, Sumatra",garansi,,,,
-TTPSI,"Tondong, Sulawesi Selatan",garansi,,,,
-UTUSI,"Una-una, Sulawesi Tengah",garansi,,,,
+kode,stasiun,tipe
+ACBM,"Ayyu, Ciparay, Jawa Barat",nongaransi
+ALTI,"Alor Timur, Nusa",nongaransi
+AAFM,"Alor Selatan, Alor, NTT",nongaransi
+AAI,"Ambon, Maluku",nongaransi
+AAII,"Ambon, Maluku (CEA)",nongaransi
+ABJI,"Asem Bagus, Situbondo,",nongaransi
+ABSM,"Argamakmur, Bengkulu",nongaransi
+ACJM,"Astanajapura, Jawa Barat",nongaransi
+ALKI,"Alor, Kep. Alor,",nongaransi
+AMPM,"Aifat, Maybrat Papua Barat",nongaransi
+APSI,"Ampana, Sulawesi Tengah",nongaransi
+ARMI,"Aru, Maluku",nongaransi
+ARPI,"Arso, Papua Barat",nongaransi
+ATNI,"Atambua, Kab. Belu,",nongaransi
+BAJI,"Socah, Jawa Timur",nongaransi
+BAKI,"Biak, Papua",nongaransi
+BASI,"Baing, Waingapu, P",nongaransi
+BATI,"Baumata, NTT (AS045)",nongaransi
+BBBCM,"Bonto Bahari, Bulukumba, SulSel",nongaransi
+BBCI,"Biau, Sulawesi Tengah",nongaransi
+BBCM,"Bontocani, Sulawesi Selatan",nongaransi
+BBJI,"Bungbulang, Garut, Jawa",nongaransi
+BBJM,"Bubulan, Jawa Timur",nongaransi
+BBSI,"Bau Bau, Kotamadya",nongaransi
+BDBI,"Badung, Bali",nongaransi
+BDCM,"Banawa Selatan, Sulawesi",nongaransi
+BESI,"Bukit, Aceh",nongaransi
+BESM,"Beutong, Aceh",nongaransi
+BGCI,"Balantak, Sulawesi Tengah",nongaransi
+BGCM,"Balaesang, Sulawesi Tengah",nongaransi
+BHCM,"Bahodopi, Sulawesi Tengah",nongaransi
+BKB,"Balikpapan, Kalimantan selatan",nongaransi
+BKJI,"Banjar, Jawa Barat",nongaransi
+BKNI,"Bangkinang, Riau",nongaransi
+BKSI,"Bulukumba, Kab. Bulukumba,",nongaransi
+BLCM,"Balaesang Tanjung, Sulawesi",nongaransi
+BLJI,"Banyuglugur,Jawa Timur",nongaransi
+BLSM,"Batukuning Lakitan Ulu,",nongaransi
+BMBNG,"Terdani, Kudus",nongaransi
+BMSI,"Bangko, Jambi",nongaransi
+BNDI,"Bandaneira, P Banda,",nongaransi
+BNSI,"Bone,Sulawesi Selatan",nongaransi
+BNTI,"Bajawa, Nusa Tenggara",nongaransi
+BOJI,"Sawit, Jawa Tengah",nongaransi
+BOSM,"Banding Agung, Sumatra",nongaransi
+BPMJM,"Batumarmar, Pamekasan JaTim",nongaransi
+BPSM,"Bayang, Sumatra Barat",nongaransi
+BSI,"Banda Aceh, Nanggro",nongaransi
+BSMI,"Bula, Seram, Maluku",nongaransi
+BSSI,"Benteng, P. Selayar,",nongaransi
+BTCM,"Bungku Tengah, Sulawesi",nongaransi
+BTJI,"Bumi Jawa, Jawa",nongaransi
+BUJI,"Buayan, Jawa Tengah",nongaransi
+BUKI,"Berau, Kalimantan Timur",nongaransi
+BUSI,"Bandar Baru, Aceh",nongaransi
+BWJI,"Bawean, Jawa Timur",nongaransi
+BYJI,"Banyuwangi, Jawa Timur",nongaransi
+BYLI,"Bayan, Nusa Tenggara",nongaransi
+CASI,"Calang, Aceh",nongaransi
+CBJI,"Citeko, Bogor, Jawa",nongaransi
+CBJM,"Cipongkor, Jawa Barat",nongaransi
+CCJM,"Campaka, Jawa Barat",nongaransi
+CGJI,"Cigeulis Pandeglang, Banten",nongaransi
+CIJI,"Cipedes, Jawa Barat",nongaransi
+CIJM,"Cikedung, Jawa Barat",nongaransi
+CMJI,"Cimerak,Jawa Barat",nongaransi
+CNJI,"Cianjur,Jawa Barat",nongaransi
+CSJI,"Ciracap, Jawa Barat",nongaransi
+CSJM,"Congeang, Jawa Barat",nongaransi
+CTJI,"Cacaban, Tegal,Jawa Tengah",nongaransi
+CWJM,"Cikalong Wetan, Jawa",nongaransi
+DBJI,"Dermaga,Jawabarat",nongaransi
+DBKI,"Dusun Selatan, Kalimantan",nongaransi
+DBNFM,"Donggo, Bima, NTB",nongaransi
+DDSI,"Dumai Timur, Riau",nongaransi
+DNP,"Denpasar,Bali",nongaransi
+DOCM,"Donggala, Sulawesi Tengah",nongaransi
+DYPI,"Dekai, Papua Barat",nongaransi
+EDFI,"Ende, Flores,Nusa Tenggara",nongaransi
+EGSI,"Enggano, Bengkulu",nongaransi
+ESNI,"Empang, Sumbawa, Nusat Tenggara",nongaransi
+ERPI,"Enaratoli, Papua",nongaransi
+FAKI,"Fak-Fak, Papua Barat",nongaransi
+FKMPM,"Kurik, Merauke, Papua",nongaransi
+GBJI,"Gringsing, Jawa Tengah",nongaransi
+GEJI,"Gedangan, Jawa Timur",nongaransi
+GENI,"Genyem, Jayapura, Papua",nongaransi
+GESM,"Geumpang, Aceh",nongaransi
+GGJM,"Gabus, Jawa Tengah",nongaransi
+GHMI,"Gane Barat, Maluku",nongaransi
+GKJM,"Gedangsari, Yogyakarta",nongaransi
+GMJI,"Gumukmas,Jawa Timur",nongaransi
+GPSM,"Geumpang, Aceh",nongaransi
+GRJI,"Gresik, Jawa Timur",nongaransi
+GSI,"Gunung Sitoli, Nias,",nongaransi
+GTJI,"Gemawang, Jawa Tengah",nongaransi
+GTOI,"Gorontalo, Sulawesi (CEA)",nongaransi
+GTSI,"Gunung Toar, Riau",nongaransi
+GUJM,"Gubug, Jawa Tengah",nongaransi
+IATSM,"Idi, Aceh Timur, Aceh",nongaransi
+IBTI,"Ile Boleng, Nusa",nongaransi
+IGBI,"Ingas, Denpasar, Bali",nongaransi
+IHMI,"Ibu, Maluku Utara",nongaransi
+IHRSI,"Indragiri Hilir, Riau, Sumatera",nongaransi
+IWPI,"Rasiei, Papua Barat",nongaransi
+JAGI,"Jajag Banyuwangi, Jawa",nongaransi
+JASI,"Sangir Balai Janggo,",nongaransi
+JAY,"Jayapura, Papua (AS041)",nongaransi
+JBJI,"Jasinga, Jawa Barat",nongaransi
+JBJM,"Jepon, Jawa Tengah",nongaransi
+JCJI,"Jatiwangi, Cirebon,Jawa Barat",nongaransi
+JHMI,"Jailolo, Maluku Utara",nongaransi
+JMSI,"Jangkat, Jambi",nongaransi
+JPJI,"Jatiluhur, Jawa Barat",nongaransi
+JPSI,"Jurai, Sulawesi Barat",nongaransi
+JSBFM,"Jereweh, Sumbawa Barat, NTB",nongaransi
+JTJM,"Jampang Tengah, Jawa",nongaransi
+JWJM,"Juwangi, Jawa Tengah",nongaransi
+KAPI,"Kappang, Sulawesi Selatan",nongaransi
+KBBI,"Kintamani, Bali",nongaransi
+KBJM,"Kunduran, Jawa Tengah",nongaransi
+KBKI,"Kotabaru, Kalimantan Selatan",nongaransi
+KDI,"Kendari, Sulawesi Tenggara",nongaransi
+KGCM,"Kwandang, Gorontalo",nongaransi
+KHK,"Kahang-kahang, Karang Asem,",nongaransi
+KJCM,"Kelara, Kab. Jeneponto, SulSel",nongaransi
+KKKI,"Kendawangan, Kalimantan Barat",nongaransi
+KKMI,"Kei Kecil, Maluku",nongaransi
+KKSI,"Kolaka, Sulawesi Tenggara",nongaransi
+KLI,"Kotabumi, Lampung Utara,",nongaransi
+KLJI,"Klakah, Jawa Timur",nongaransi
+KLNI,"Mataram, Nusa Tenggara",nongaransi
+KLSI,"Kotabumi, Lampung (CEA)",nongaransi
+KLSM,"Kluet Utara, Aceh",nongaransi
+KMBFM,"Kuwus, Manggarai Barat, NTT",nongaransi
+KMMI,"Kalianget, Jawa Timur",nongaransi
+KMNI,"Mataram, Nusa Tenggara Barat",nongaransi
+KMPI,"Kaimana, Kaimana Papua",nongaransi
+KMSI,"Kotamubago, Sulawesi Utara",nongaransi
+KPJI,"Karang Pucung,Cilacap.Jawa Tengah",nongaransi
+KPJM,"Kapas, Jawa Timur",nongaransi
+KRAI,"Kai Ratu, Maluku",nongaransi
+KRJI,"Kerinci, Jambi",nongaransi
+KRSI,"Karossa, Sulawesi Barat",nongaransi
+KSI,"Kepahiyang, Bengkulu, Sumatera",nongaransi
+KTMI,"Kormomolin, Maluku",nongaransi
+KTTI,"Kolbano, Nusa Tenggara",nongaransi
+KUKI,"Kutai Barat, Kalimantan Timur",nongaransi
+KUSI,"Kluet Utara, Aceh",nongaransi
+KWJI,"Kertek, Jawa Tengah",nongaransi
+LASI,"Langsa, Aceh",nongaransi
+LBFI,"Labuhan Bajo, NTT",nongaransi
+LBNFM,"Lambu, Bima, NTB",nongaransi
+LDSI,"Laurambong, Sumatera Utara",nongaransi
+LEM,"Lembang-Bandung, Jawa Barat",nongaransi
+LESM,"Lemong, Lampung",nongaransi
+LHMI,"Lhokseumawe, Aceh",nongaransi
+LHSM,"Semendo, Sumatra Selatan",nongaransi
+LISM,"Lingge Isaq, Aceh",nongaransi
+LJPI,"Lereh, Papua Barat",nongaransi
+LKCI,"Pakue, Sulawesi Tenggara",nongaransi
+LKSM,"Suliki, Sumatra Barat",nongaransi
+LKUCM,"Langgikima, Konawe, Sulawesi",nongaransi
+LLSI,"Lubuk Linggau Barat,",nongaransi
+LLSM,"Limau, Lampung",nongaransi
+LMNI,"Lembata, NTT (CEA)",nongaransi
+LMTI,"Langke Rembong, Nusa",nongaransi
+LOCM,"Lore Tengah, Sulawesi",nongaransi
+LPCM,"Lembang, Sulawesi Selatan",nongaransi
+LPSM,"Lengayang, Sumatra Barat",nongaransi
+LRTI,"Larantuka, Nusa Tenggara",nongaransi
+LSCM,"Lalabati Rilau, Sulawesi",nongaransi
+LSNI,"Lunyuk, Sumbawa, Nusat Tenggara",nongaransi
+LTNI,"Lombok Timur, Nusa Tenggara",nongaransi
+LTSM,"Lumut, Sumatra Utara",nongaransi
+LUCM,"Lore Utara, Sulawesi",nongaransi
+LUJI,"Lumbang, Jawa Timur",nongaransi
+LUWI,"Luwuk, sulawesi tenggah",nongaransi
+MASM,"Masjid Raya, Aceh",nongaransi
+MBBI,"Muara Bungo, Jambi",nongaransi
+MBJI,"Bawang, Majelengka, Banjarnegara,",nongaransi
+MBPI,"Manimeri, Papua Barat",nongaransi
+MBSM,"Marga Sakti Seblat,",nongaransi
+MDSI,"Muara Dua, Sumatera",nongaransi
+MGAI,"Melonguane, Kep. Talud,",nongaransi
+MIPI,"Mimika Baru, Papua",nongaransi
+MKBI,Muko-Muko Bengkulu Indonesia,nongaransi
+MKJM,"Manisrenggo, Jawa Tengah",nongaransi
+MKSM,"Muara Sahung, Bengkulu",nongaransi
+MLJI,"Malang, Karangkates, Jawa",nongaransi
+MLJM,"Mantup, Jawa Timur",nongaransi
+MMCI,"Mamasa, Sulawesi Barat",nongaransi
+MMRI,"Maumere, Nusa Tengagara",nongaransi
+MMSI,"Mamuju, Sulawesi Barat",nongaransi
+MNAI,"Manna, Bengkulu",nongaransi
+MNI,"Manado, Sulawesi Utara,",nongaransi
+MNSI,"Mandailing Natal,Sumatera Utara",nongaransi
+MPSI,"Mapaga,Donggola, Sulawesi Tengah",nongaransi
+MPSM,"Mapat Tunggul, Sumatra",nongaransi
+MRSI,"Marissa,Gorontalo, Sulawesi Utara",nongaransi
+MSAI,"Masohi, Maluku",nongaransi
+MSCM,"Masamba, Sulawesi Selatan",nongaransi
+MTAI,"Morotai, maluku utara",nongaransi
+MTCM,"Malili, Sulawesi Selatan",nongaransi
+MTKI,"Muara Teweh, Kalimantan",nongaransi
+MTSI,"Manduamas, Sumatra Utara",nongaransi
+MTSM,"Muara Dua, Sumatra",nongaransi
+MWPI,"Manokwari, Papua Barat",nongaransi
+NBMI,"Namrole, Maluku",nongaransi
+NBPI,"Nabire, Papua",nongaransi
+NGJI,"Ngawi, Jawa Timur",nongaransi
+NJBM,"Negara, Jembrana, Bali",nongaransi
+NKBI,"Nusa Penida, Bali",nongaransi
+NKKI,"Nangan Tayap, Kalimantan",nongaransi
+NSBMM,"Seram Barat, Maluku",nongaransi
+OBMI,"Pulau OBI, Maluku",nongaransi
+OMBFM,"Komodo, Manggarai Barat, NTT",nongaransi
+ONSM,"Onan Ganjang, Sumatra",nongaransi
+PABI,"Pasaman, Sumatra Barat",nongaransi
+PAKI,"Paser, Kalimantan Timur",nongaransi
+PAFM,"Pantar tengah, Alor, NTT",nongaransi
+PBCI,"Bolang-Uki, Sulawesi Utara",nongaransi
+PBJI,"Pasirjambu, Jawa Barat",nongaransi
+PBKI,"Pangkalan Bun, Kalimantan",nongaransi
+PBLI,"Pujut, Nusa Tenggara",nongaransi
+PBSI,"Pulau Batu, Sumatra",nongaransi
+PBNI,"Parado, Bima, Nusa Tenggara",nongaransi
+PCI,"Palu, Sulawesi Tengah",nongaransi
+PCJI,"Pacitan, Jawa Timur",nongaransi
+PCJM,"Pabuaran, Jawa Barat",nongaransi
+PDLI,"Pekat, Nusa Tenggara",nongaransi
+PDSI,"Unand Padang, Sumatra",nongaransi
+PGJM,"Panggang, Yogyakarta",nongaransi
+PICM,"Parigi Utara, Sulawesi",nongaransi
+PKCI,"Lainea, Sulawesi Tenggara",nongaransi
+PKJI,"Paninggaran, Jawa Tengah",nongaransi
+PKJM,"Pasawahan, Jawa Barat",nongaransi
+PKSI,"Pagar Alam Utara,",nongaransi
+PLAI,"Plampang, Nusa Tenggara",nongaransi
+PLJI,"Plosoklaten, Jawa Timur",nongaransi
+PLSI,"Pangkalan Koto Baru,",nongaransi
+PLSM,"Sosa, Sumatra Utara",nongaransi
+PMBI,"Palembang, Sumatera Selatan",nongaransi
+PMCI,"Pasangkayu, Sulawesi Barat",nongaransi
+PMMI,"Pulau Makian, Maluku",nongaransi
+PMSI,"Paralitang, Majene, Sulawesi",nongaransi
+POCI,"Poso Pesisir, Sulawesi",nongaransi
+PPCM,"Patampanua, Sulawesi Selatan",nongaransi
+PPI,"Kota Padangpanjang, Sumatera",nongaransi
+PPJI,"Prigen, Pasuruan, Jawa",nongaransi
+PPLI,"Punduh Pedada, Lampung",nongaransi
+PPSI,"Pulau Pagai, Sumatra",nongaransi
+PPSM,"Pesisir Selatan, Lampung",nongaransi
+PRJI,"Pracimantoro, Jawa Tengah",nongaransi
+PRSI,"Pelalawan, Riau, Sumatera",nongaransi
+PSI,"Parapat, Sumatera Utara",nongaransi
+PSJCM,"Pasimansunggu, Selayar, SulSel",nongaransi
+PSJM,"Pelabuhan Ratu, Jawa",nongaransi
+PSLI,"Rajabasa P. Sibesi,",nongaransi
+PSSI,"Pulau Siau, Sulawesi",nongaransi
+PSSM,"Pematang Sawah, Lampung",nongaransi
+PTJI,"Pondok Aren, Banten",nongaransi
+PTSM,"Pangaribuan, Sulawesi Utara",nongaransi
+PWCM,"Pitumpanua, Wajo, SulSel",nongaransi
+PWJI,"Pagerwojo, Jawa Timur",nongaransi
+RASM,Ranah Ampek Hulu,nongaransi
+RDCM,"Rio Pakava, Sulawesi",nongaransi
+RGRI,"Rengat, Riau",nongaransi
+RHRSI,"Rokan-hilir, Riau",nongaransi
+RKCM,"Rauta, Konawe, Sulawesi",nongaransi
+RKPI,"Ransiki, Papua Barat",nongaransi
+RLSI,"Rantau Selatan, Sulawesi",nongaransi
+RMSM,"Rawas Hulu,, Sumatra",nongaransi
+RNFM,"Riung, Ngada, NTT",nongaransi
+RONI,"Rote, NTT (CEA)",nongaransi
+RRSI,"Rambah, Riau",nongaransi
+RSSM,"Ronggurnihuta, Sumatra Utara",nongaransi
+RTBI,"Rangdo, Tabanan, Negara,",nongaransi
+RSNI,"Ropang, Sumbawa, Nusa Tennggara",nongaransi
+SANI,"Sanana, Maluku Utara",nongaransi
+SASI,"Simpang Empat, Sumut",nongaransi
+SASM,"Sampoiniet, Aceh",nongaransi
+SAUI,"Saumlaki, Maluku",nongaransi
+SBBM,"Seririt, Buleleng, Bali",nongaransi
+SBJI,"Serang, Banten",nongaransi
+SBJM,"Sanden, Yogyakarta",nongaransi
+SBNI,"Sabu, Nusa Tenggara",nongaransi
+SBSM,"Sungai Beremas, Sumatra",nongaransi
+SCJI,"Srandil Cilacap, Jawa",nongaransi
+SCJM,"Sukaluyu, Jawa Barat",nongaransi
+SDCI,"Sindue, Sulawesi Tengah",nongaransi
+SDSI,"Sungai Dareh, Sumatra",nongaransi
+SDSM,"Sidikalang, Sumatra Utara",nongaransi
+SEJI,"Senori, Jawa Timur",nongaransi
+SEMI,Seram Utara Timur,nongaransi
+SGKI,"Sangata, Kalimantan Timur",nongaransi
+SGSI,"Sangihe, Sulawesi Utara",nongaransi
+SIJI,"Sorong, Papua Barat",nongaransi
+SIJM,"Sidoarjo, Jawa Timur",nongaransi
+SIRSI,"Siak, Riau, Sumatra",nongaransi
+SISM,"Silih Nara, Aceh",nongaransi
+SJPM,"Sentani, Jayapura, Papua",nongaransi
+SKJI,"Sukabumi, Jawa Barat",nongaransi
+SKPM,"Senggi, Keerom, Papua",nongaransi
+SKSI,"Sukakarya, Aceh",nongaransi
+SKSM,"Siulak Mukai, Jambi",nongaransi
+SLBFM,"Sekotong Tengah, Lombok, NTB",nongaransi
+SLSI,"Sarolangun, Jambi",nongaransi
+SLSM,"Sungai Lasi, Sumatra",nongaransi
+SMKI,"Samarinda, Kalimantan Timur",nongaransi
+SMPI,"Sarmi, Papua",nongaransi
+SMRI,"Semarang, Jawa Tengah",nongaransi
+SMSI,"Sumalata, Gorontalo",nongaransi
+SMSM,"Simpati, Sumatra Barat",nongaransi
+SNBI,"Sirombu, Sulawesi Utara",nongaransi
+SNJI,"Sawahan, Nganjuk, Jawa",nongaransi
+SNSI,"Sinabang, NAD",nongaransi
+SOEI,"Soei, Kab. Timor",nongaransi
+SPSI,"Sidrap Palu, Sulawesi",nongaransi
+SPSJM,"Serang Panjang, Subang, JaBar",nongaransi
+SPSM,Sitellu Tali Urang,nongaransi
+SRBI,"Singaraja, Bali",nongaransi
+SRMI,"Seram Utara, Maluku",nongaransi
+SRPI,"Serui, Papua",nongaransi
+SRSI,"Sorowako, Sulawesi Selatan",nongaransi
+SSJM,"Sukaraja, Jawa Barat",nongaransi
+SSKI,"Singkawang, Kalimantan Barat",nongaransi
+SSMI,Siritaun Wida Timur,nongaransi
+SSSI,"Subulussalam, Aceh",nongaransi
+SSSM,"Sangir, Sumatra Barat",nongaransi
+STSI,"Silaut, Sulawesi Barat",nongaransi
+SUSM,"Sekincau, Lampung",nongaransi
+SWCM,"Sabbang Paru, Sulawesi",nongaransi
+SWI,"Sorong, Papua Barat",nongaransi
+SWJI,"Sawahan, Jawa Timur",nongaransi
+SWPM,"Sidey, Manokwari Papua Barat",nongaransi
+SYJI,"Sleman, Yogyakarta",nongaransi
+TAMI,"Teluk Ambon, Maluku",nongaransi
+TARAI,"Tarakan, Kalimantan Timur",nongaransi
+TASI,"Tanjung Raya, Sumatra",nongaransi
+TBCM,"Tonra, Sulawesi Selatan",nongaransi
+TBJI,"Tambakboyo, Jawa Timur",nongaransi
+TBKI,"Teluk Bayur, Kalimantan",nongaransi
+TBMCM,"Bolaang Mongondow, Sulawesi Utara",nongaransi
+TDNI,"Teluk Dalam, Nias,",nongaransi
+TGCM,"Telaga, Gorontalo",nongaransi
+TKSM,"Tiganderket, Sumatra Utara",nongaransi
+TLCM,"Tomoni, Sulawesi Selatan",nongaransi
+TLE2,"Tual2, Maluku",nongaransi
+TMSI,"Tondano, Sulawesi Utara",nongaransi
+TMSM,"Teramang Jaya, Bengkulu",nongaransi
+TMTMM,"Tehoru, Maluku Tengah, Maluku",nongaransi
+TNG,"Tangerang, Banten",nongaransi
+TNGI,"Tangerang, Banten (CEA)",nongaransi
+TNTI,"Ternate, Maluku Utara",nongaransi
+TOCM,"Towuti, Sulawesi Selatan",nongaransi
+TOJI,"Tomo, Jawa Barat",nongaransi
+TOLI2,"Toli-Toli, Sulawesi Tengah",nongaransi
+TPCI,"Taopa, Sulawesi Tengah",nongaransi
+TPI,"Tanjung Pandan, Bangka",nongaransi
+TPRI,"Tanjung Pinang, Kepulauan",nongaransi
+TPSI,"Tangse, Aceh",nongaransi
+TPTI,"Tapaktuan, Aceh (CEA)",nongaransi
+TRIYO,"Sipora Selatan, SumBar",nongaransi
+TRPI,"Tanah Merah, Papua",nongaransi
+TSI,"Tuntungan, Sumatra Utara",nongaransi
+TSJM,"Tanjungsiang, Jawa Barat",nongaransi
+TSPI,"Teminabuan, Papua Barat",nongaransi
+TTSI,"Tana Toraja, Sulawesi",nongaransi
+TTSM,"Tano Tombangan Angkola,",nongaransi
+TUJI,"Tumpakrejo, Jawa Timur",nongaransi
+UGM,"Wanagama, Yogyakarta",nongaransi
+UKCM,"Unaaha, Konawe, Sulawesi",nongaransi
+ULSM,"Ulu Musi, Sumatra",nongaransi
+USFM,"Utan, Sumbawa, NTB",nongaransi
+USTI,"Umbu Ratu Nggay,",nongaransi
+UTSI,"Ulu Belu, Lampung",nongaransi
+UTSM,"Ulu Talo, Bengkulu",nongaransi
+UWJI,"Ujung Watu, Jawa",nongaransi
+WAMI,"Wamena, Papua",nongaransi
+WBMI,"Weda Barat, Maluku",nongaransi
+TSNI,"Tarano, Nusa Tenggara Barat",nongaransi
+WBNI,"Wera, Bima, Nusa Tenggara",nongaransi
+WBSI,"Waikabubak, NTT",nongaransi
+WEFM,"Wewaria, Ende, NTT",nongaransi
+WFTFM,"Wulnggitang, Flores Timur, NTT",nongaransi
+WGJM,"Wringianom, Jawa Timur",nongaransi
+WHMI,"Wasile, Maluku Utara",nongaransi
+WKCM,"Wolo, Kolaka, Sulawesi",nongaransi
+WLFM,"Omesuri, Lembata, NTT",nongaransi
+WLJI,"Wonosalam, Banten",nongaransi
+WLTFM,"Wanasaba, Lombok Timur, NTB",nongaransi
+WMCM,"Wita Ponda, Sulawesi",nongaransi
+WOJI,"Wonogiri, D.I. Yogyakarta",nongaransi
+WRJI,"Curahdami, Jawa Timur",nongaransi
+WSI,"Waingapu, Nusa Tenggara",nongaransi
+WSJM,"Warungkiara, Jawa Barat",nongaransi
+WSTMM,"Werinama, Seram Timur, Maluku",nongaransi
+WUPCM,"Wara Utara, alopo, SulSel",nongaransi
+WWCI,"Wangi-wangi, Sulawesi Tenggara",nongaransi
+WWPI,"Waropen Bawah, Papua",nongaransi
+YOGI,Yogyakarta (CEA),nongaransi
+ANAPI,PapuaBarat,garansi
+APSSI,Bengkulu,garansi
+ARKPI,Papua,garansi
+ARSKI,JawaTimur,garansi
+ASTTI,NusaTenggaraTimur,garansi
+ATKTI,NusaTenggaraTimur,garansi
+BAPJI,JawaTimur,garansi
+BATPI,PapuaBarat,garansi
+BBLSI,"Banggai, Sulawesi Tengah",garansi
+BDMUI,MalukuUtara,garansi
+BGASI,Aceh,garansi
+BKASI,SumateraBarat,garansi
+BTSPI,Papua,garansi
+BUBSI,SulawesiTengah,garansi
+BUMSI,"Bungku Utara, Sulawesi Tengah",garansi
+CILJI,Banten,garansi
+EDMPI,Papua,garansi
+ELMPI,Papua,garansi
+FKSPI,PapuaBarat,garansi
+GARPI,PapuaBarat,garansi
+GEBBI,Bali,garansi
+HINSI,SumateraUtara,garansi
+JAASI,Aceh,garansi
+KARPI,PapuaBarat,garansi
+KASAI,"Kotabaharu, Aceh",garansi
+KBSSI,NusaTenggaraTimur,garansi
+KHSSI,NusaTenggaraTimur,garansi
+KIMPI,Papua,garansi
+KKKKI,"Katingan, Kalimantan Tengah",garansi
+KKTKI,"Kombeng, Kalimantan Timur",garansi
+KOMFI,NusaTenggaraTimur,garansi
+KORPI,PapuaBarat,garansi
+KUBSI,SulawesiTenggara,garansi
+LBTSI,SumateraBarat,garansi
+LEMFI,NusaTenggaraTimur,garansi
+LOMSI,SulawesiTenggara,garansi
+LTNSI,SumateraUtara,garansi
+MAKBI,Bali,garansi
+MASFI,NusaTenggaraTimur,garansi
+MASSI,SulawesiUtara,garansi
+MBRPI,PapuaBarat,garansi
+MIBPI,Papua,garansi
+MISSI,SulawesiUtara,garansi
+MLMMI,Maluku,garansi
+MSHHI,MalukuUtara,garansi
+MTJPI,Papua,garansi
+MTMPI,Papua,garansi
+MTMTI,NusaTenggaraTimur,garansi
+MUMUI,MalukuUtara,garansi
+MUTSI,SumateraUtara,garansi
+NANFI,NusaTenggaraTimur,garansi
+OBMPI,Papua,garansi
+PAASI,Aceh,garansi
+PASJI,Banten,garansi
+PASMI,SumateraBarat,garansi
+PBMMI,Maluku,garansi
+PBMSI,"Poigar, Sulawesi Utara",garansi
+POBSI,SulawesiTenggara,garansi
+POKJI,JawaTimur,garansi
+PRLJI,"Pasiran, Lumajang",garansi
+PUPSI,SulawesiTengah,garansi
+RHRRI,"Rokan Hilir, Riau, Sumatra",garansi
+ROTTI,NusaTenggaraTimur,garansi
+SAASI,Aceh,garansi
+SAKJI,DIY,garansi
+SAPSI,SulawesiTengah,garansi
+SATPI,Papua,garansi
+SBSSI,SulawesiTengah,garansi
+SICJI,JawaTengah,garansi
+SISMI,SumateraBarat,garansi
+SIUMI,SumateraBarat,garansi
+SOMPI,Papua,garansi
+SSASI,Aceh,garansi
+SUPJI,Banten,garansi
+SUSPI,Papua,garansi
+TAGJI,DIY,garansi
+TAPSI,SulawesiBarat,garansi
+TASSI,SulawesiUtara,garansi
+TBMUI,MalukuUtara,garansi
+TIKSI,SulawesiTenggara,garansi
+TIPSI,SulawesiTengah,garansi
+TOBSI,SulawesiTengah,garansi
+TOTSI,SulawesiTengah,garansi
+TTPSI,"Tondong, Sulawesi Selatan",garansi
+TTSMI,Maluku,garansi
+UMKSI,Bengkulu,garansi
+UMSSI,NusaTenggaraTimur,garansi
+UTUSI,"Una-una, Sulawesi Tengah",garansi
+UWNPI,Papua,garansi
+WANPI,Papua,garansi
+WSHHI,MalukuUtara,garansi
+WTKSI,SulawesiTenggara,garansi
+YBYPI,Papua,garansi

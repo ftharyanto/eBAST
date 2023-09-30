@@ -12,6 +12,7 @@ KELOMPOK = (
 
 WAKTU = (
     ('12:00 WIB', '12:00 WIB'),
+    ('18:00 WIB', '18:00 WIB'),
     ('00:00 WIB', '00:00 WIB')
 )
 
@@ -30,9 +31,9 @@ class ChecklistSeiscompModel(models.Model):
     jam = models.CharField(max_length=20, choices=WAKTU, default='12:00 WIB')
     kelompok = models.IntegerField(choices=KELOMPOK, default=1)
     operator = models.TextField(null=True,)
-    gaps = models.CharField(max_length=500, null=True, blank=True)
-    spikes = models.CharField(max_length=500, null=True, blank=True)
-    blanks = models.CharField(max_length=500, null=True, blank=True)
+    gaps = models.TextField(max_length=500, null=True, blank=True)
+    spikes = models.TextField(max_length=500, null=True, blank=True)
+    blanks = models.TextField(max_length=500, null=True, blank=True)
     slmon = models.PositiveIntegerField(null=True, blank=True)
 
     def save(self, *args, **kwargs):
@@ -47,13 +48,13 @@ class ChecklistSeiscompModel(models.Model):
         # Modify the group field here
         if self.gaps:
             self.gaps = self.gaps.upper()
-            self.gaps = remove_accelerograph(self.gaps.split())
+            self.gaps = remove_accelerograph(self.gaps.split('\r\n'))
         if self.spikes:
             self.spikes = self.spikes.upper()
-            self.spikes = remove_accelerograph(self.spikes.split())
+            self.spikes = remove_accelerograph(self.spikes.split('\r\n'))
         if self.blanks:
             self.blanks = self.blanks.upper()
-            self.blanks = remove_accelerograph(self.blanks.split())
+            self.blanks = remove_accelerograph(self.blanks.split('\r\n'))
 
         super().save(*args, **kwargs)
 
@@ -62,6 +63,7 @@ class ChecklistSeiscompModel(models.Model):
     
 class OperatorModel(models.Model):
     name = models.CharField(max_length=100)
+    nip = models.CharField(max_length=18)
 
     def __str__(self):
         return self.name

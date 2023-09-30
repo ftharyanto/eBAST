@@ -31,6 +31,6 @@ class Command(BaseCommand):
         #Code to load the data into database
         for row in DictReader(open('./station_list.csv')):
             data=StationListModel(kode=row['kode'],
-                                  stasiun=row['stasiun'],
+                                  lokasi=row['stasiun'],
                                   tipe=row['tipe'])  
             data.save()

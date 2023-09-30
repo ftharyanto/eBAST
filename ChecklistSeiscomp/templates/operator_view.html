@@ -31,6 +31,7 @@
     <tr>
         <th>No.</th>
         <th>Nama</th>
+        <th>NIP</th>
         <th>Aksi</th>
     </tr>
     {% for operator in operators %}
@@ -39,6 +40,8 @@
             {{ forloop.counter}}
         </td>
         <td> <input id="name_{{ operator.id }}" type="text" value="{{ operator.name }}"
+                style="color: black; border-bottom: 0;" disabled> </td>
+        <td> <input id="name_{{ operator.id }}" type="text" value="{{ operator.nip }}"
                 style="color: black; border-bottom: 0;" disabled> </td>
         <td>
             <a id="editBtn_{{ operator.id }}" class="waves-effect waves-light btn"

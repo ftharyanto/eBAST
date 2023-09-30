@@ -245,38 +245,118 @@ def export_excel_instant(request):
     return response
 
 
+
+
+def download_file(real_file_id):
+    import io
+
+    import google.auth
+    from googleapiclient.discovery import build
+    from googleapiclient.errors import HttpError
+    from googleapiclient.http import MediaIoBaseDownload
+    from secret_settings import GSHEETS_CREDS
+    """Downloads a file
+    Args:
+        real_file_id: ID of the file to download
+    Returns : IO object with location.
+
+    Load pre-authorized user credentials from the environment.
+    TODO(developer) - See https://developers.google.com/identity
+    for guides on implementing OAuth2 for the application.
+    """
+    creds = GSHEETS_CREDS
+
+    try:
+        # create drive api client
+        service = build('drive', 'v3', credentials=creds)
+
+        file_id = real_file_id
+
+        # pylint: disable=maybe-no-member
+        request = service.files().get_media(fileId=file_id)
+        file = io.BytesIO()
+        downloader = MediaIoBaseDownload(file, request)
+        done = False
+        while done is False:
+            status, done = downloader.next_chunk()
+            print(F'Download {int(status.progress() * 100)}.')
+
+    except HttpError as error:
+        print(F'An error occurred: {error}')
+        file = None
+
+    return file.getvalue()
+
 def export_pdf_instant(request):
-    from django.conf import settings
-    from io import BytesIO
-    from reportlab.pdfgen import canvas
-    from reportlab.lib.pagesizes import letter
-    from openpyxl import load_workbook
+    # from django.conf import settings
+    # from io import BytesIO
+    # from reportlab.pdfgen import canvas
+    # from reportlab.lib.pagesizes import letter
+    # from openpyxl import load_workbook
 
-    def convert_to_pdf(file_path):
-        wb = load_workbook(filename=file_path)
-        ws = wb.active
+    # def convert_to_pdf(file_path):
+    #     wb = load_workbook(filename=file_path)
+    #     ws = wb.active
 
-        buffer = BytesIO()
-        c = canvas.Canvas(buffer, pagesize=letter)
+    #     buffer = BytesIO()
+    #     c = canvas.Canvas(buffer, pagesize=letter)
 
-        for row in ws.iter_rows():
-            for cell in row:
-                c.drawString(100, 100, str(cell.value))
+    #     for row in ws.iter_rows():
+    #         for cell in row:
+    #             c.drawString(100, 100, str(cell.value))
 
-        c.save()
+    #     c.save()
 
-        buffer.seek(0)
-        return buffer
+    #     buffer.seek(0)
+    #     return buffer
     
-    static_folder = str(settings.STATIC_ROOT) + '/ChecklistSeiscomp/'
-    file_path = static_folder + 'template.xlsx'
+    # static_folder = str(settings.STATIC_ROOT) + '/ChecklistSeiscomp/'
+    # file_path = static_folder + 'template.xlsx'
 
-    buffer = convert_to_pdf(file_path)
+    # buffer = convert_to_pdf(file_path)
 
-    response = HttpResponse(buffer.read(), content_type='application/pdf')
-    response['Content-Disposition'] = 'attachment; filename="file.pdf"'
+    # response = HttpResponse(buffer.read(), content_type='application/pdf')
+    # response['Content-Disposition'] = 'attachment; filename="file.pdf"'
 
-    return response
+    # return response
+
+    # import gspread, sys, requests
+    # print(sys.path)
+    # from oauth2client.service_account import ServiceAccountCredentials
+    # import secret_settings
+
+    # creds = secret_settings.GSHEETS_CREDS
+
+    # scope = [
+    # 'https://www.googleapis.com/auth/spreadsheets',
+    # 'https://www.googleapis.com/auth/drive'
+    # ]
+
+    # creds = gspread.oauth_from_dict(creds)
+    # client=gspread.authorize(creds)
+
+    # ssid = '1o4Bki_ofmU4WYMZbQlUvoY-JNBWvzeuyofxRM2ZFT6I'
+    # gid = '169956573'
+    # spreadsheet = client.open(ssid)
+    # url = f'https://docs.google.com/spreadsheets/export?format=pdf&id={spreadsheet.id}&gid={gid}&portrait=true&size=Folio'
+    # headers = {'Authorization': 'Bearer ' + creds.create_delegated("").get_access_token().access_token}
+    # res = requests.get(url, headers=headers)
+    # with open("Ceklis.pdf", 'wb') as f:
+    #     f.write(res.content)
+
+    # return res
+    import requests
+
+    url = 'https://script.google.com/macros/s/AKfycbxPVOb8TVUbu8q8c23d4jEJdTDEJZLp9me8Z7rkv0pbQ0m7jcNhcC6jwgt2bNfEe_vTmA/exec'
+    response = requests.get(url)
+    
+    if response == 200:
+        response['Content-Disposition'] = 'attachment; filename=fajar.pdf'
+        return response
+    else:
+        return HttpResponseRedirect("/checklist-seiscomp/create_view")
+
+
 
 
 def date_range_to_string(date_range):

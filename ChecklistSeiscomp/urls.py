@@ -4,6 +4,7 @@ from . import views
 app_name = 'ChecklistSeiscomp'
 
 urlpatterns = [
+    path('', views.create_view, name='home'),
     path('statistic_view/', views.statistic_view, name='statistic_view'),
     path('create_view/', views.create_view, name='create_view'),
     path('list_view', views.list_view, name='list_view'),

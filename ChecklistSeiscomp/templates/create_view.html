@@ -26,39 +26,41 @@
             </div>
 
             <div>
-                {{ input_form.gaps|materializecss}}
-            </div>
-
-            <div>
-                {{ input_form.spikes|materializecss}}
-            </div>
-
-            <div>
-                {{ input_form.blanks|materializecss}}
-            </div>
-
-            <div>
                 {{ input_form.slmon|materializecss}}
             </div>
 
-            <button type="submit" class="btn waves-effect waves-light blue darken-1" type="submit"
-                name="action">Submit</button>
+            <div class="col m4 s12">
+                {{ input_form.gaps|materializecss}}
+            </div>
+
+            <div class="col m4 s12">
+                {{ input_form.spikes|materializecss}}
+            </div>
+
+            <div class="col m4 s12">
+                {{ input_form.blanks|materializecss}}
+            </div>
+
+            <div class="col s12">
+                <button type="submit" class="btn waves-effect waves-light blue darken-1" type="submit"
+                    name="action">Submit</button>
+            </div>
         </form>
     </div>
 
     <br><br>
     <h4>Data terakhir</h4>
-    <a style="" class="waves-effect waves-light btn red darken-1"
+    <!-- <a style="" class="waves-effect waves-light btn red darken-1"
         onclick="window.location.href='{% url 'ChecklistSeiscomp:export_pdf_instant' %}'"><i
             class="material-icons left">picture_as_pdf</i>Buat
-        Laporan PDF</a>
+        Laporan PDF</a> -->
     <a class="waves-effect waves-light btn green darken-1"
         onclick="window.location.href='{% url 'ChecklistSeiscomp:export_excel_instant' %}'"><i
             class="fa-solid fa-file-excel" style="padding-right: 1rem;"></i>Buat Laporan
         Excel</a>
-    <a class="waves-effect waves-light btn blue darken-1"
+    <!-- <a class="waves-effect waves-light btn blue darken-1"
         onclick="window.location.href='{% url 'ChecklistSeiscomp:send_to_gcp_ss' %}'"><i
-            class="fa-solid fa-file-excel" style="padding-right: 1rem;"></i>Kirim ke GCP</a>
+            class="fa-solid fa-file-excel" style="padding-right: 1rem;"></i>Kirim ke GCP</a> -->
     <table>
         <tr>
             <th>Tanggal</th>
