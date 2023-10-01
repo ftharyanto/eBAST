@@ -275,7 +275,7 @@ def export_excel(request, id):
         shift = 'SHIFT SIANG'    
     else:
         shift = 'SHIFT MALAM'
-        
+
     metadata = {'kelompok': dataset.kelompok,
             'operator': dataset.operator,
             'tanggal': format_date_indonesian(dataset.tanggal),
@@ -310,7 +310,7 @@ def export_excel(request, id):
                    )
     
     # Set the file name and attachment header
-    response['Content-Disposition'] = 'attachment; filename="data.xlsx"'
+    response['Content-Disposition'] = f'attachment; filename="CS {dataset.tanggal}.xlsx"'
     # Return the response
     return response
 
