@@ -125,7 +125,8 @@
 
         var tds = document.getElementsByTagName("td");
         for (var i = 0; i < tds.length; i++) {
-            if (tds[i].innerHTML == " None ") {
+            if (tds[i].innerHTML == " None " || tds[i].innerHTML == "  ") {
+                tds[i].innerHTML = " None "
                 tds[i].style.color = "gray";
                 tds[i].style.fontStyle = "italic"
             }

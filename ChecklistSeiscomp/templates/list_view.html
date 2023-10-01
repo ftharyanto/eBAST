@@ -7,10 +7,9 @@
 
     <a class="waves-effect waves-light btn blue darken-1" href="{% url 'ChecklistSeiscomp:create_view' %}"><i
             class="material-icons left">add</i>tambah data</a>
-    <a style="display: none;" class="waves-effect waves-light btn red darken-1" href="/"><i class="material-icons left">picture_as_pdf</i>Buat
+    <a style="display: none;" class="waves-effect waves-light btn red darken-1" href="/"><i
+            class="material-icons left">picture_as_pdf</i>Buat
         Laporan PDF</a>
-    <a class="waves-effect waves-light btn green darken-1" href="/ChecklistSeiscomp/"><i class="fa-solid fa-file-excel" style="padding-right: 1rem;"></i>Buat Laporan
-        Excel</a>
 
     <table>
         <tr>
@@ -35,14 +34,16 @@
             <td> {{ data.blanks }} </td>
             <td> {{ data.slmon }} </td>
             <td>
+                <a class="waves-effect waves-light btn green darken-1 tooltipped" data-position="bottom" data-tooltip="Export to an excel file" href="{% url 'ChecklistSeiscomp:export_excel' data.id %}"><i class="fa-solid fa-file-excel"></i></a>
                 <a class="waves-effect waves-light btn" id="edit-{{ operator.id }}" style="display: none;"><i
                         class="material-icons center">edit</i></a>
                 <a id="data_del_btn{{ data.id }}" onmouseup="data_del({{ data.id }})"
-                    class="waves-effect waves-light btn red" id="delete-{{ operator.id }}"><i
+                    class="waves-effect waves-light btn red tooltipped" data-position="bottom" data-tooltip="Delete this record"  id="delete-{{ operator.id }}"><i
                         class="material-icons center">delete</i></a>
                 <a id="delete_confirmation_{{ data.id }}" href="{% url 'ChecklistSeiscomp:data_delete' data.id %}"
                     class="waves-effect waves-light btn red" style="visibility: hidden;"><i
                         class="material-icons center"></i>yes</a>
+
             </td>
         </tr>
         {% endfor %}

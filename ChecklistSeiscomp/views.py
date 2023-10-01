@@ -181,52 +181,122 @@ def send_to_gcp_ss(request):
     print(all_data)
     return HttpResponseRedirect("/checklist-seiscomp/create_view")
 
+def format_date_indonesian(d):
+    from datetime import date
+    # Define Indonesian names for days and months
+    days = ['Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu', 'Minggu']
+    months = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 
+              'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember']
 
-def export_excel_instant(request):
+    # Get the day of the week, day of the month, month, and year from the date
+    day_of_week = days[d.weekday()]
+    day = d.day
+    month = months[d.month - 1]
+    year = d.year
+
+    # Return the formatted date
+    return f'{day_of_week}, {day} {month} {year}'
+
+# def export_excel_instant(request):
+#     """This function is used to export excel file containing last 2 records"""
+
+#     from django.conf import settings
+#     from .output_generator import generate_excel
+#     import ast
+
+
+#     data = ChecklistSeiscompModel.objects.all().order_by('-tanggal')[:2]
+#     metadata = {'kelompok': data[0].kelompok,
+#             'operator1': data[0].operator,
+#             'operator2': data[1].operator,
+#             'tanggal': date_range_to_string([data[1].tanggal, data[0].tanggal])}
+    
+#     data1 = {}
+#     if data[1].gaps:
+#         data1['gaps'] = ast.literal_eval(data[1].gaps)
+#     else:
+#         data1['gaps'] = []
+
+#     if data[1].spikes:
+#         data1['spikes'] = ast.literal_eval(data[1].spikes)
+#     else:
+#         data1['spikes'] = []
+
+#     if data[1].blanks:
+#         data1['blanks'] = ast.literal_eval(data[1].blanks)
+#     else:
+#         data1['blanks'] = []    
+
+#     data2 = {}
+#     if data[0].gaps:
+#         data2['gaps'] = ast.literal_eval(data[0].gaps)
+#     else:
+#         data2['gaps'] = []    
+
+#     if data[0].spikes:
+#         data2['spikes'] = ast.literal_eval(data[0].spikes)
+#     else:
+#         data2['spikes'] = [] 
+
+#     if data[0].blanks:
+#         data2['blanks'] = ast.literal_eval(data[0].blanks)
+#     else:
+#         data2['blanks'] = [] 
+
+#     # Get the path of the Excel file in static folder
+#     file_path = str(settings.STATIC_ROOT) + '/ChecklistSeiscomp/template.xlsx'
+
+#     # Save the workbook to a byte stream
+#     response = HttpResponse(content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+#     generate_excel(filename=file_path,
+#                    response=response,
+#                    metadata=metadata,
+#                    data1=data1,
+#                    data2=data2)
+    
+#     # Set the file name and attachment header
+#     response['Content-Disposition'] = 'attachment; filename="data.xlsx"'
+#     # Return the response
+#     return response
+
+
+def export_excel(request, id):
     """This function is used to export excel file containing last 2 records"""
 
     from django.conf import settings
     from .output_generator import generate_excel
     import ast
 
-
-    data = ChecklistSeiscompModel.objects.all().order_by('-tanggal')[:2]
-    metadata = {'kelompok': data[0].kelompok,
-            'operator1': data[0].operator,
-            'operator2': data[1].operator,
-            'tanggal': date_range_to_string([data[1].tanggal, data[0].tanggal])}
+    dataset = ChecklistSeiscompModel.objects.get(id=id)
+    shift = ''
+    if dataset.jam == '12:00 WIB':
+        shift = 'SHIFT PAGI'
+    elif dataset.jam == '18:00 WIB':
+        shift = 'SHIFT SIANG'    
+    else:
+        shift = 'SHIFT MALAM'
+        
+    metadata = {'kelompok': dataset.kelompok,
+            'operator': dataset.operator,
+            'tanggal': format_date_indonesian(dataset.tanggal),
+            'shift': shift,
+            }
     
-    data1 = {}
-    if data[1].gaps:
-        data1['gaps'] = ast.literal_eval(data[1].gaps)
+    data = {}
+    if dataset.gaps:
+        data['gaps'] = ast.literal_eval(dataset.gaps)
     else:
-        data1['gaps'] = []
+        data['gaps'] = []
 
-    if data[1].spikes:
-        data1['spikes'] = ast.literal_eval(data[1].spikes)
+    if dataset.spikes:
+        data['spikes'] = ast.literal_eval(dataset.spikes)
     else:
-        data1['spikes'] = []
+        data['spikes'] = []
 
-    if data[1].blanks:
-        data1['blanks'] = ast.literal_eval(data[1].blanks)
+    if dataset.blanks:
+        data['blanks'] = ast.literal_eval(dataset.blanks)
     else:
-        data1['blanks'] = []    
-
-    data2 = {}
-    if data[0].gaps:
-        data2['gaps'] = ast.literal_eval(data[0].gaps)
-    else:
-        data2['gaps'] = []    
-
-    if data[0].spikes:
-        data2['spikes'] = ast.literal_eval(data[0].spikes)
-    else:
-        data2['spikes'] = [] 
-
-    if data[0].blanks:
-        data2['blanks'] = ast.literal_eval(data[0].blanks)
-    else:
-        data2['blanks'] = [] 
+        data['blanks'] = []   
 
     # Get the path of the Excel file in static folder
     file_path = str(settings.STATIC_ROOT) + '/ChecklistSeiscomp/template.xlsx'
@@ -236,16 +306,13 @@ def export_excel_instant(request):
     generate_excel(filename=file_path,
                    response=response,
                    metadata=metadata,
-                   data1=data1,
-                   data2=data2)
+                   data=data,
+                   )
     
     # Set the file name and attachment header
     response['Content-Disposition'] = 'attachment; filename="data.xlsx"'
     # Return the response
     return response
-
-
-
 
 def download_file(real_file_id):
     import io
