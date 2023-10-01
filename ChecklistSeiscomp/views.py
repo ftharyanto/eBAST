@@ -280,6 +280,7 @@ def export_excel(request, id):
             'operator': dataset.operator,
             'tanggal': format_date_indonesian(dataset.tanggal),
             'shift': shift,
+            'jam': dataset.jam,
             }
     
     data = {}
@@ -310,7 +311,7 @@ def export_excel(request, id):
                    )
     
     # Set the file name and attachment header
-    response['Content-Disposition'] = f'attachment; filename="CS {dataset.tanggal}.xlsx"'
+    response['Content-Disposition'] = f'attachment; filename="CS_{dataset.tanggal}_{shift.split()[1]}.xlsx"'
     # Return the response
     return response
 

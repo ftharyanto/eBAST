@@ -34,6 +34,8 @@ def generate_excel(filename, response, metadata, data):
         ws['I264'] = metadata['operator']
         ws['V3'] = metadata['tanggal']
         ws['A2'] = metadata['shift']
+        ws['E6'] = ws['T6'] = ws['T152'] = ws['I249'] = f"JAM {metadata['jam']}"
+
 
     def update_data(gaps, spikes, blanks):
         clear_cells('E8:G267', ws)
