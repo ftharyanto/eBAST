@@ -21,6 +21,7 @@ from accounts import views as views_account
 app_name = 'ChecklistSeiscomp'
 
 urlpatterns = [
+    path('', views.create_view),
     path('admin/', admin.site.urls),
     path('checklist-seiscomp/', include('ChecklistSeiscomp.urls')),
     path('', include('accounts.urls')),
