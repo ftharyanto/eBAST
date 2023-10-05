@@ -3,6 +3,7 @@ from django.shortcuts import (get_object_or_404,
                               render,
                               HttpResponseRedirect)
 import openpyxl
+from django.urls import reverse
 
 # relative import of forms
 from .models import ChecklistSeiscompModel, OperatorModel, StationListModel
@@ -63,20 +64,20 @@ def update_view(request, id):
 def operator_delete(request, id):
     ob = OperatorModel.objects.get(id=id)
     ob.delete()
-    return HttpResponseRedirect("/checklist-seiscomp/operator_view")
+    return HttpResponseRedirect(reverse('ChecklistSeiscomp:operator_view'))
 
 
 def data_delete(request, id):
     ob = ChecklistSeiscompModel.objects.get(id=id)
     ob.delete()
-    return HttpResponseRedirect("/checklist-seiscomp/list_view")
+    return HttpResponseRedirect(reverse('ChecklistSeiscomp:list_view'))
 
 
 def operator_update(request, id):
     ob = OperatorModel.objects.get(id=id)
     ob.name = request.POST.get('field1')
     ob.save()
-    return HttpResponseRedirect("/checklist-seiscomp/operator_view")
+    return HttpResponseRedirect(reverse('ChecklistSeiscomp:operator_view'))
 
 
 def operator_view(request):
