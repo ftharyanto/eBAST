@@ -14,7 +14,7 @@ def create_view(request):
     # dictionary for initial data with
     # field names as keys
     context = {}
-    context['dataset'] = ChecklistSeiscompModel.objects.all().order_by('-tanggal')[:2]
+    context['dataset'] = ChecklistSeiscompModel.objects.all().order_by('-id')[:2]
 
     # add the dictionary during initialization
     input_form = InputForm(request.POST or None)
@@ -33,7 +33,7 @@ def list_view(request):
     context = {}
 
     # add the dictionary during initialization
-    context["dataset"] = ChecklistSeiscompModel.objects.all().order_by('-tanggal')
+    context["dataset"] = ChecklistSeiscompModel.objects.all().order_by('-id')
 
     return render(request, "list_view.html", context)
 
@@ -655,3 +655,8 @@ def plot_slmon_vm(days, time='00:00 WIB'):
                output_type='div', include_plotlyjs=False, show_link=False
                )
     return jam00
+
+
+def detail_view(request, id):
+    data = ChecklistSeiscompModel.objects.filter(id=id)
+    return render(request, 'detail_view.html', {'data': data})

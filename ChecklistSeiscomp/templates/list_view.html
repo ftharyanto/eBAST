@@ -25,13 +25,13 @@
         </tr>
         {% for data in dataset %}
         <tr>
-            <td> {{ data.tanggal|date:'Y-m-d' }} </td>
+            <td> <a href="{% url 'ChecklistSeiscomp:detail_view' data.id %}">{{ data.tanggal|date:'Y-m-d' }}</a> </td>
             <td> {{ data.kelompok }} </td>
             <td> {{ data.operator }} </td>
             <td> {{ data.jam }} </td>
-            <td> {{ data.gaps }} </td>
-            <td> {{ data.spikes }} </td>
-            <td> {{ data.blanks }} </td>
+            <td> {{ data.count_gaps }} </td>
+            <td> {{ data.count_spikes }} </td>
+            <td> {{ data.count_blanks }} </td>
             <td> {{ data.slmon }} </td>
             <td>
                 <a class="waves-effect waves-light btn green darken-1 tooltipped" data-position="bottom" data-tooltip="Export to an excel file" href="{% url 'ChecklistSeiscomp:export_excel' data.id %}"><i class="fa-solid fa-file-excel"></i></a>

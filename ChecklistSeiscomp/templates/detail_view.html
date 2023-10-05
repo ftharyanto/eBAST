@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load materializecss %}
+
+{% block content %}
+<div class="container" style="padding-top: 2rem;">
+    {% for item in data %}
+    <p><b>Tanggal:</b> {{ item.tanggal|date:'Y-m-d' }}</p>
+    <p><b>Kelompok:</b> {{ item.kelompok }}</p>
+    <p><b>Operator:</b> {{ item.operator }}</p>
+    <p><b>Jam:</b> {{ item.jam }}</p>
+    <p><b>Count Gaps:</b> {{ item.count_gaps }}</p>
+    <p><b>Count Spikes:</b> {{ item.count_spikes }}</p>
+    <p><b>Count Blanks:</b> {{ item.count_blanks }}</p>
+    <p><b>Gaps:</b> {{ item.gaps }}</p>
+    <p><b>Spikes:</b> {{ item.spikes }}</p>
+    <p><b>Blanks:</b> {{ item.blanks }}</p>
+    <p><b>Slmon:</b> {{ item.slmon }}</p>
+    {% endfor %}
+</div>
+
+{% endblock content %}
+
+{% block javascript %}
+{% endblock javascript %}

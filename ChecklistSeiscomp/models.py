@@ -34,7 +34,10 @@ class ChecklistSeiscompModel(models.Model):
     gaps = models.TextField(max_length=500, null=True, blank=True)
     spikes = models.TextField(max_length=500, null=True, blank=True)
     blanks = models.TextField(max_length=500, null=True, blank=True)
-    slmon = models.PositiveIntegerField(null=True, blank=True)
+    slmon = models.PositiveIntegerField(null=True, blank=True, default=0)
+    count_gaps = models.IntegerField(default=0, blank=True)
+    count_spikes = models.IntegerField(default=0, blank=True)
+    count_blanks = models.IntegerField(default=0, blank=True)
 
     def save(self, *args, **kwargs):
         seismograph_list = StationListModel.objects.values_list('kode', flat=True)
@@ -49,12 +52,17 @@ class ChecklistSeiscompModel(models.Model):
         if self.gaps:
             self.gaps = self.gaps.upper()
             self.gaps = remove_accelerograph(self.gaps.split('\r\n'))
+            self.count_gaps = len(self.gaps)
+
         if self.spikes:
             self.spikes = self.spikes.upper()
             self.spikes = remove_accelerograph(self.spikes.split('\r\n'))
+            self.count_spikes = len(self.spikes)
+
         if self.blanks:
             self.blanks = self.blanks.upper()
             self.blanks = remove_accelerograph(self.blanks.split('\r\n'))
+            self.count_blanks = len(self.blanks)
 
         super().save(*args, **kwargs)
 
